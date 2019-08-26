@@ -7,12 +7,10 @@
 
 <body>
 	<table width="832" border="1" align="center">
-  <tr>
-    <td width="822"><img src="image/school.png" width="851" height="315" alt=""/></td>
-  </tr>
-  <tr>
-    <td bgcolor="#FFAD00"><div align="right">กลุ่มสาระ | ตำเเหน่ง | ครูอาจารย์ | ผลงาน | ชั้นเรียน | นักเรียน | Logout</div></td>
-  </tr>
+		<?php 
+		include "head.php";
+		include "admin_menu.php";
+		?>
   <tr>
     <td><div align="center">
       <p>&nbsp;</p>
@@ -49,7 +47,5 @@
       <p>&nbsp;</p>
     </div></td>
   </tr>
-  <tr>
-    <td bgcolor="#FFAD00"><div align="center">จัดทำโดย Anantasak Nonkhunthod 601102064106</div></td>
-  </tr>
+<?php include "foot.php" ?>
 </table>

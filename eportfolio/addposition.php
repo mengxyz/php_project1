@@ -1,17 +1,5 @@
 <?php
-$server = "localhost";
-$user = "root";
-$password = "";
-$dbname = "db_eportfolio";
-$conn = mysql_connect($server,$user,$password);
-if(!$conn)
-	die("1. ไม่สามารถติดต่อกับ mysql ได้");
-mysql_select_db($dbname,$conn)
-	or die("2. ไม่สามารถเรียกใช้งานฐานข้อมูลได้");
-
-mysql_query("SET character_set_result=utf8");
-mysql_query("SET character_set_client=utf8");
-mysql_query("SET character_set_connection=utf8");
+include "connect.php";
 
 $po_name = $_POST["po_name"];
 
@@ -28,8 +16,8 @@ if($po_name){
 		mysql_close();
 		echo "<script language=\"javascript\">";
 		echo "alert('บันทึกข้อมูลเรียบร้อยแล้ว');";
-		//echo "window.location = 'shwodept.php'";
-		echo "window.history.back();";
+		echo "window.location = 'showposition.php'";
+		//echo "window.history.back();";
 		echo "</script>";
 	}else{
 		echo "<script language=\"javascript\">";
