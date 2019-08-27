@@ -20,8 +20,16 @@
             <td colspan="2" bgcolor="#FFB700"><div align="center">เพิ่มชั้นเรียน</div></td>
             </tr>
           <tr>
-            <td width="90">ชื่อชั้นเรียน</td>
-            <td width="144"><input type="text" name="c_name" id="c_name" /></td>
+            <td>ชื่อชั้นเรียน</td>
+            <td><input type="text" name="c_name" id="c_name" /></td>
+          </tr>
+          <tr>
+            <td>std_id</td>
+            <td>&nbsp;</td>
+          </tr>
+          <tr>
+            <td width="90">t_id</td>
+            <td width="144">&nbsp;</td>
           </tr>
           <tr>
             <td height="29" colspan="2"><div align="center">
