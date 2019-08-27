@@ -8,7 +8,7 @@ $w_org = $_POST["w_org"];
 
 
 if($w_name && $w_org && $w_year){	
-	$sql = "SELECT * FROM $tb_name WHERE w_name = '$w_name'";
+	$sql = "SELECT * FROM $tb_name WHERE w_name = '$w_name' AND w_year = '$w_year' AND w_org = '$w_org'";
 	$result = mysql_query($sql,$conn);
 	$total = mysql_num_rows($result);
 
@@ -24,7 +24,7 @@ if($w_name && $w_org && $w_year){
 		echo "</script>";
 	}else{
 		echo "<script language=\"javascript\">";
-		echo "alert('ชื่อผลงานซ้ำ');";
+		echo "alert('ผลงานซ้ำ');";
 		echo "window.history.back();";
 		echo "</script>";
 	}
