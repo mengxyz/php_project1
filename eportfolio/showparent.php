@@ -47,7 +47,7 @@ mysql_close();
             <td><?php echo "$rs[pa_name]"; ?></td>
             <td><?php echo "$rs[pa_occupation]"; ?></td>
             <td><?php echo "$rs[pa_tel]"; ?></td>
-            <td>จัดการผลงานะ</td>
+            <td>จัดการข้อมูลผู้ปกครอง</td>
             <td><div align="center"><?php echo "<a href=\"frm_editparent.php?pa_id=$rs[pa_id]\">"; ?>แก้ไข</a></div></td>
             <td><div align="center"><?php echo "<a href=\"deleteparent.php?pa_id=$rs[pa_id]\">"; ?>ลบ</a></div></td>
           </tr>
