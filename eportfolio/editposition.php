@@ -2,9 +2,25 @@
 include "connect.php"; 
 $po_id = $_POST['po_id'];
 $po_name = $_POST['po_name'];
-$sql = "UPDATE position SET po_name = '$po_name' WHERE po_id = '$po_id'";
-mysql_query($sql,$conn)
-	or die("ไ3. ไม่สามารถประมวลผลคำสั่งได้").mysql_error();
+// check bank text
+if($po_name){
+	// check diplicate priamry key
+	$sql = "SELECT * FROM position WHERE po_id = '$po_id'";
+	$total = mysql_query($sql,$conn);
+	
+	if(mysql_num_rows($total) == 0){
+		$sql = "UPDATE position SET po_name = '$po_name' WHERE po_id = '$po_id'";
+		mysql_query($sql,$conn)
+			or die("3. ไม่สามารถประมวลผลคำสั่งได้").mysql_error();
+	}else{
+		echo "<script language=\"javascript\">";
+		echo "alert('ชื่อตำเเหน่งซ้ำ');";
+		echo "window.location = \"showposition.php\";";
+		echo "</script>";
+	}
+}else{
+	echo "<script language=\"javascript\">alert('กรุณาป้อนชื่อตำเเหน่ง');window.location = 'showposition.php';</script>";
+}
 mysql_close();
 ?>
 <script language="javascript">
