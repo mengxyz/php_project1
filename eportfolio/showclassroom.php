@@ -47,7 +47,7 @@ mysql_close();
             <td><?php echo "$rs[c_name]"; ?></td>
             <td>&nbsp;</td>
             <td>&nbsp;</td>
-            <td>จัดการผลงานะ</td>
+            <td>จัดการข้อมูลชั้นเรียน</td>
             <td><div align="center"><?php echo "<a href=\"frm_editclassroom.php?c_id=$rs[c_id]\">"; ?>แก้ไข</a></div></td>
             <td><div align="center"><?php echo "<a href=\"deleteclassroom.php?c_id=$rs[c_id]\">"; ?>ลบ</a></div></td>
           </tr>

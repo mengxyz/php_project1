@@ -26,7 +26,7 @@ $rs = mysql_fetch_array($result);
         <table width="350" border="1" align="center">
           <tbody>
             <tr>
-              <td colspan="2"><div align="center">แก้ไขตำเเหน่ง</div></td>
+              <td colspan="2" bgcolor="#FFAD00"><div align="center">แก้ไขผู้ปกครอง</div></td>
               </tr>
             <tr>
               <td width="92">รหัสบัตรประชาชน</td>

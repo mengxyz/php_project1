@@ -47,7 +47,7 @@ mysql_close();
             <td><?php echo "$rs[w_name]"; ?></td>
             <td><?php echo "$rs[w_year]"; ?></td>
             <td><?php echo "$rs[w_org]"; ?></td>
-            <td>จัดการผลงานะ</td>
+            <td>จัดการข้อมูลผลงาน</td>
             <td><div align="center"><?php echo "<a href=\"frm_editwork.php?w_id=$rs[w_id]\">"; ?>แก้ไข</a></div></td>
             <td><div align="center"><?php echo "<a href=\"deletework.php?w_id=$rs[w_id]\">"; ?>ลบ</a></div></td>
           </tr>
