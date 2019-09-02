@@ -1,6 +1,6 @@
 <?php
 include "connect.php";
-$w_id = $_GET["w_id"];
+$w_id = $_POST["w_id"];
 $sql = "DELETE FROM work WHERE w_id = '$w_id'";
 mysql_query($sql,$conn)
 	or die("3. ไมสามารถประมวลผลคำสั่งได้").mysql_error();

@@ -44,3 +44,5 @@
   </tr>
 		<?php include "foot.php" ?>
 </table>
+</body>
+</html>

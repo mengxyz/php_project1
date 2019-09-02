@@ -1,6 +1,6 @@
 <?php
 include "connect.php";
-$d_id = $_GET['d_id'];
+$d_id = $_POST['d_id'];
 $sql = "DELETE FROM department WHERE d_id = '$d_id'";
 mysql_query($sql,$conn)
 	or die("3. ไม่สามารถประมวลผลคำสั่งได้").mysql_error();

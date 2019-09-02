@@ -45,7 +45,7 @@ $result = mysql_query($sql,$conn)
             <td><?php echo "$rs[po_name]"; ?></td>
             <td>จัดการข้อมูลตำเเหน่ง</td>
             <td><div align="center"><?php echo "<a href=\"frm_editposition.php?po_id=$rs[po_id]\">"; ?>แก้ไข</a></div></td>
-            <td><div align="center"><?php echo "<a href=\"deleteposition.php?po_id=$rs[po_id]\">"; ?>ลบ</a></div></td>
+            <td><div align="center"><?php echo "<a href=\"frm_deleteposition.php?po_id=$rs[po_id]\">"; ?>ลบ</a></div></td>
           </tr>
           <?php
 			}

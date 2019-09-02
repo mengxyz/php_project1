@@ -1,6 +1,6 @@
 <?php
 include "connect.php";
-$po_id = $_GET['po_id'];
+$po_id = $_POST['po_id'];
 $sql = "DELETE FROM position WHERE po_id = '$po_id'";
 mysql_query($sql,$conn)
 	or die("3. ไม่สามารถประมวลผลคำสั่งได้").mysql_error();

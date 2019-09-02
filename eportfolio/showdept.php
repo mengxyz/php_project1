@@ -50,7 +50,7 @@ mysql_close();
               <td width="100"><div align="center">
 			  <?php echo "<a href=\"frm_editdept.php?d_id=$rs[d_id]\">"; ?>แก้ไข<?php echo "</a>" ?></div></td>
               <td width="149"><div align="center">
-             <?php echo "<a href=\"deletedept.php?d_id=$rs[d_id]\">"; ?>ลบ<?php echo "</a>"; ?></div></td>
+             <?php echo "<a href=\"frm_deletedept.php?d_id=$rs[d_id]\">"; ?>ลบ<?php echo "</a>"; ?></div></td>
             </tr>
 			  <?php
 			  }

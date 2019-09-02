@@ -1,6 +1,6 @@
 <?php
 include "connect.php";
-$pa_id = $_GET['pa_id'];
+$pa_id = $_POST['pa_id'];
 $sql = "DELETE FROM parent WHERE pa_id = '$pa_id'";
 mysql_query($sql,$conn)
 	or die("3. ไม่สามารถประมวลผลคำสั่งได้").mysql_error();

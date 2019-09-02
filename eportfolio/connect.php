@@ -1,4 +1,10 @@
 <?php
+/*
+$server = "10.10.10.63";
+$user = "s601102064106";
+$password = "601102064106";
+$dbname = "db601102064106";
+*/
 $server = "localhost";
 $user = "root";
 $password = "";

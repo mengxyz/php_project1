@@ -1,6 +1,6 @@
 <?php
 include "connect.php";
-$c_id = $_GET['c_id'];
+$c_id = $_POST['c_id'];
 $sql = "DELETE FROM classroom WHERE c_id = '$c_id'";
 mysql_query($sql,$conn)
 	or die("3. ไม่สามารถประมวลคำสั่งได้").mysql_error();
