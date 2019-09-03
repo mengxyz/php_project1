@@ -21,7 +21,7 @@
             <td colspan="2" bgcolor="#FFB700"><div align="center">เพิ่มข้อมูลอาจารย์</div></td>
             </tr>
           <tr>
-            <td width="132">ชื่อชั้นสกุล</td>
+            <td width="132">ชื่อ - สกุล</td>
             <td width="227"><input type="text" name="t_name" id="t_name" /></td>
           </tr>
           <tr>

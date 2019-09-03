@@ -1,6 +1,6 @@
 <?php
 include "connect.php";
-$sql = "SELECT * FROM work ORDER BY w_id";
+$sql = "SELECT t.t_id,t.t_name,d.d_name FROM department d,teacher t WHERE t.d_id = d.d_id";
 $result = mysql_query($sql,$conn)
 	or die("3. ไม่สามารถประมวลผลคำสั่งได้").mysql_error();
 mysql_close();
@@ -25,17 +25,15 @@ mysql_close();
         <tbody>
           <tr>
             <td width="266">รายงานข้อมูลผลงาน</td>
-            <td width="518"><div align="right">[ <a href="frm_addwork.php">เพิ่มผลงาน</a> ]</div></td>
+            <td width="518"><div align="right">[ <a href="frm_addteacher.php">เพิ่มอาจารย์</a> ]</div></td>
           </tr>
         </tbody>
       </table>
         <table width="800" border="1" align="center">
           <tr>
-            <td width="95">รหัสผลงาน</td>
-            <td width="165">ชื่อผลงาน</td>
-            <td width="58">ปี</td>
-            <td width="176">หน่วยงาน</td>
-            <td width="112">&nbsp;</td>
+            <td width="95">รหัสอาจารย์</td>
+            <td width="165">ชื่อจารย์</td>
+            <td width="58">กลุ่มสาระ</td>
             <td width="78">&nbsp;</td>
             <td width="70">&nbsp;</td>
           </tr>
@@ -43,13 +41,11 @@ mysql_close();
 		  	while($rs = mysql_fetch_array($result)){
 		  ?>
           <tr>
-            <td><?php echo "$rs[w_id]"; ?></td>
-            <td><?php echo "$rs[w_name]"; ?></td>
-            <td><?php echo "$rs[w_year]"; ?></td>
-            <td><?php echo "$rs[w_org]"; ?></td>
-            <td>จัดการข้อมูลผลงาน</td>
-            <td><div align="center"><?php echo "<a href=\"frm_editwork.php?w_id=$rs[w_id]\">"; ?>แก้ไข</a></div></td>
-            <td><div align="center"><?php echo "<a href=\"frm_deletework.php?w_id=$rs[w_id]\">"; ?>ลบ</a></div></td>
+            <td><?php echo "$rs[t_id]"; ?></td>
+            <td><?php echo "$rs[t_name]"; ?></td>
+            <td><?php echo "$rs[d_name]"; ?></td>
+            <td><div align="center"><?php echo "<a href=\"frm_editteacher.php?t_id=$rs[t_id]\">"; ?>แก้ไข</a></div></td>
+            <td><div align="center"><?php echo "<a href=\"frm_deleteteacher.php?t_id=$rs[t_id]\">"; ?>ลบ</a></div></td>
           </tr>
           <?php
 			}

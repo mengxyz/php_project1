@@ -12,16 +12,39 @@ $d_id = $_POST['d_id'];
 $fileupload = $_FILES['photo']['tmp_name'];
 $fileupload_name = $_FILES['photo']['name'];
 
-if($fileupload != ""){
-	copy($fileupload,"./picture/".$fileupload_name);
-	$sql = "INSERT INTO teacher (t_name,t_address,t_tel,t_pic,po_id,d_id,t_username,t_password)";
-	$sql .= " VALUES ('$t_name','$t_address','$t_tel','$fileupload_name','$po_id','$d_id','$t_username','$t_password')";
+if($t_name && $t_username){
+	
+	$sql = "SELECT * FROM teacher WHERE t_name = '$t_name' OR t_username = '$t_username'";
+	$result = mysql_query($sql,$conn);
+	$total = mysql_fetch_array($result);
+	
+	if($total == 0){
+		if($fileupload != ""){
+			copy($fileupload,"./picture/".$fileupload_name);
+			$sql = "INSERT INTO teacher (t_name,t_address,t_tel,t_pic,po_id,d_id,t_username,t_password)";
+			$sql .= " VALUES ('$t_name','$t_address','$t_tel','$fileupload_name','$po_id','$d_id','$t_username','$t_password')";
+		}else{
+			$sql = "INSERT INTO teacher (t_name,t_address,t_tel,po_id,d_id,t_username,t_password)";
+			$sql .= " VALUES ('$t_name','$t_address','$t_tel','$po_id','$d_id','$t_username','$t_password')";
+		}
+		mysql_query($sql,$conn)
+		or die("3. ไม่สามารถประมวลผลคำสั่งได้").mysql_error();
+	}else{
+			echo "<script language=\"javascript\">";
+			echo "alert('ชื่อ - สกุล หรือ username ซ้ำ');";
+			echo "window.location = \"frm_addteacher.php\";";
+			echo "</script>";
+	}
 }else{
-	$sql = "INSERT INTO teacher (t_name,t_address,t_tel,po_id,d_id,t_username,t_password)";
-	$sql .= " VALUES ('$t_name','$t_address','$t_tel','$po_id','$d_id','$t_username','$t_password')";
+	$msg = "";
+	if(!$t_username) $msg .= " username";
+	if(!$t_name) $msg .= " ชื่อ - สกุล";
+	echo "<script language=\"javascript\">";
+	echo "alert('กรุณาป้อน{$msg}');";
+	echo "window.location = \"frm_addteacher.php\";";
+	echo "</script>";
 }
-mysql_query($sql,$conn)
-	or die("3. ไม่สามารถประมวลผลคำสั่งได้").mysql_error();
+
 mysql_close();
 ?>
 

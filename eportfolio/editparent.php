@@ -1,18 +1,17 @@
 <?php
 include "connect.php";
 $pa_id = $_POST['pa_id'];
-$pa_id_old = $_POST['pa_id_old'];
 $pa_name = $_POST['pa_name'];
 $pa_occupation = $_POST['pa_occupation'];
 $pa_tel = $_POST['pa_tel'];
 // check bank text
 if(strlen($pa_id)==13 && $pa_name && $pa_occupation && $pa_tel){
 	// check diplicate priamry key
-	$sql = "SELECT * FROM parent WHERE pa_id = '$pa_id'";
+	$sql = "SELECT * FROM parent WHERE pa_name = '$pa_name'";
 	$total = mysql_query($sql,$conn);
 	
 	if(mysql_num_rows($total) == 0){
-		$sql = "UPDATE parent SET pa_id = '$pa_id',pa_name = '$pa_name',pa_occupation = '$pa_occupation',pa_tel = '$pa_tel' WHERE pa_id = '$pa_id_old'";
+		$sql = "UPDATE parent SET pa_name = '$pa_name',pa_occupation = '$pa_occupation',pa_tel = '$pa_tel' WHERE pa_id = '$pa_id'";
 		mysql_query($sql,$conn)
 			or die("3. ไม่สามารถประมวลผลคำสั่งได้").mysql_error();
 	}else{

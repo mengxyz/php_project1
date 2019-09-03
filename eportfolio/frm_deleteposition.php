@@ -32,7 +32,7 @@ $rs = mysql_fetch_array($result);
             <tr>
               <td width="92">ชื่อตำเเหน่ง</td>
               <td width="216">
-                <input name="po_name" type="text" id="po_name" value="<?php echo "$rs[po_name]"; ?>">
+                <input name="po_name" type="text" id="po_name" value="<?php echo "$rs[po_name]"; ?>" readonly>
                 <input name="po_id" type="hidden" id="po_id" value="<?php echo "$rs[po_id]"; ?>"></td>
             </tr>
             <tr>

@@ -25,7 +25,7 @@ mysql_close();
         <tbody>
           <tr>
             <td width="266">รายงานข้อมูลชั้นเรียน</td>
-            <td width="518">&nbsp;</td>
+            <td width="518"><div align="right">[ <a href="frm_addclassroom.php">เพิ่มชั้นเรียน</a> ]</div></td>
           </tr>
         </tbody>
       </table>

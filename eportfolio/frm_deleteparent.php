@@ -31,23 +31,23 @@ $rs = mysql_fetch_array($result);
             <tr>
               <td width="92">รหัสบัตรประชาชน</td>
               <td width="216">
-                <input name="pa_id" type="text" id="pa_id" value="<?php echo "$rs[pa_id]"; ?>" maxlength="13">
+                <input name="pa_id" type="text" id="pa_id" value="<?php echo "$rs[pa_id]"; ?>" maxlength="13" readonly>
                 <input name="pa_id_old" type="hidden" id="pa_id_old" value="<?php echo "$rs[pa_id]"; ?>"></td>
             </tr>
             <tr>
               <td width="92">ชิ่อ</td>
               <td width="216">
-                <input name="pa_name" type="text" id="pa_name" value="<?php echo "$rs[pa_name]"; ?>">
+                <input name="pa_name" type="text" id="pa_name" value="<?php echo "$rs[pa_name]"; ?>" readonly>
             </tr>
             <tr>
               <td width="92">อาชีพ</td>
               <td width="216">
-                <input name="pa_occupation" type="text" id="pa_occupation" value="<?php echo "$rs[pa_occupation]"; ?>">
+                <input name="pa_occupation" type="text" id="pa_occupation" value="<?php echo "$rs[pa_occupation]"; ?>" readonly>
             </tr>
             <tr>
               <td width="92">เบอร์โทร</td>
               <td width="216">
-                <input name="pa_tel" type="text" id="pa_tel" value="<?php echo "$rs[pa_tel]"; ?>">
+                <input name="pa_tel" type="text" id="pa_tel" value="<?php echo "$rs[pa_tel]"; ?>" readonly>
             </tr>
             <tr>
               <td colspan="2"><div align="center">

@@ -25,7 +25,7 @@ $result = mysql_query($sql,$conn)
         <tbody>
           <tr>
             <td width="239">รายงานข้อมูลตำเเหน่ง</td>
-            <td width="415">&nbsp;</td>
+            <td width="415"><div align="right">[ <a href="frm_addposition.php">เพิ่มตำเเหน่ง</a> ] </div></td>
           </tr>
         </tbody>
       </table>

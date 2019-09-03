@@ -26,7 +26,7 @@ mysql_close();
         <tbody>
           <tr>
             <td width="240">รายงานข้อมูลกลุ่มสาระ</td>
-            <td width="416">&nbsp;</td>
+            <td width="416"><div align="right">[ <a href="frm_adddept.php">เพิ่มกลุ่มสาระ</a> ]</div></td>
           </tr>
         </tbody>
       </table>

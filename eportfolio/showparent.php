@@ -25,7 +25,7 @@ mysql_close();
         <tbody>
           <tr>
             <td width="303">รายงานข้อมูลผู้ปกครอง</td>
-            <td width="491">&nbsp;</td>
+            <td width="491"><div align="right">[ <a href="frm_addparent.php">เพิ่มผู้ปกครอง</a> ]</div></td>
           </tr>
         </tbody>
       </table>
