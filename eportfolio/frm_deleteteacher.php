@@ -6,7 +6,8 @@ $sql = "SELECT * FROM teacher WHERE t_id = '$t_id'";
 $result = mysql_query($sql,$conn)
 	or die("3. ไม่สามารถประมวลผลคำสั่งได้").mysql_error();
 mysql_close();
-$rs = mysql_fetch_array($result);	
+$rs = mysql_fetch_array($result);
+//echo $_GET['t_id'];	
 ?>
 <!doctype html>
 <html>
@@ -23,7 +24,7 @@ $rs = mysql_fetch_array($result);
 	  include "admin_menu.php";
 	  ?>
     <tr>
-      <td height="511"><form action="editteacher.php" method="post" enctype="multipart/form-data" name="form1" id="form1">
+      <td height="511"><form action="deleteteacher.php" method="post" enctype="multipart/form-data" name="form1" id="form1">
         <table width="324" border="1" align="center">
           <tbody>
             <tr>
@@ -31,23 +32,23 @@ $rs = mysql_fetch_array($result);
               </tr>
             <tr>
               <td width="92">Uername</td>
-              <td width="216"><input value=<?php echo "$rs[t_username]"; ?> type="text" name="t_username" id="t_username"></td>
+              <td width="216"><input name="t_username" type="text" id="t_username" value=<?php echo "$rs[t_username]"; ?> readonly></td>
             </tr>
             <tr>
                 <td width="92">Password</td>
-                <td width="216"><input value=<?php echo "$rs[t_password]"; ?> type="text" name="t_password" id="t_password"></td>
+                <td width="216"><input name="t_password" type="text" id="t_password" value=<?php echo "$rs[t_password]"; ?> readonly="readonly"></td>
             </tr>
             <tr>
               <td>ชื่อ - สกุล</td>
-              <td><input type="text" value=<?php echo "$rs[t_name]"; ?> name="t_name" id="t_name"></td>
+              <td><input name="t_name" type="text" id="t_name" value=<?php echo "$rs[t_name]"; ?> readonly="readonly"></td>
             </tr>
             <tr>
               <td height="64">ที่อยู่</td>
-              <td><textarea name="t_address" id="t_address"><?php echo "$rs[t_address]"; ?></textarea></td>
+              <td><textarea name="t_address" readonly="readonly" id="t_address"><?php echo "$rs[t_address]"; ?></textarea></td>
             </tr>
             <tr>
               <td>เบอร์โทร</td>
-              <td><input type="text" name="t_tel" id="t_tel" value=<?php echo "$rs[t_tel]"; ?>></td>
+              <td><input name="t_tel" type="text" id="t_tel" value=<?php echo "$rs[t_tel]"; ?> readonly="readonly"></td>
             </tr>
             <tr>
               <td height="118">รูป</td>
@@ -56,11 +57,9 @@ $rs = mysql_fetch_array($result);
                 	if("$rs[t_pic]" != ""){
 				?>  
                 <img src="<?php echo "./picture/$rs[t_pic]"; ?>" width="100" height="130" >
-                <?php 
+              <?php 
 					}
-				?>
-                <input type="file" name="photo" id="photo">   
-              </tr>
+				?></tr>
             <tr>
               <td>ตำเเหน่ง</td>
               <td><select name="po_id" id="po_id">
@@ -93,7 +92,7 @@ $rs = mysql_fetch_array($result);
             </tr>
             <tr>
               <td colspan="2"><div align="center">
-                <input type="submit" name="submit" id="submit" value="บันทึก">
+                <input type="submit" name="submit" id="submit" value="ลบ">
                 <input type="button" name="Button" onClick=window.history.back() id="reset" value="ยกเลิก">
                  <input type="hidden" name="t_id" id="t_id" value="<?php echo "$rs[t_id]"; ?>">
       			<input type="hidden" name="t_pic" id="t_pic" value="<?php echo "$rs[t_pic]" ;?>" >

@@ -42,7 +42,7 @@ mysql_close();
 		  ?>
           <tr>
             <td><?php echo "$rs[t_id]"; ?></td>
-            <td><?php echo "$rs[t_name]"; ?></td>
+            <td><?php echo "<a href=\"frm_detailteacher.php?t_id=$rs[t_id]\">$rs[t_name]</a>"?></td>
             <td><?php echo "$rs[d_name]"; ?></td>
             <td><div align="center"><?php echo "<a href=\"frm_editteacher.php?t_id=$rs[t_id]\">"; ?>แก้ไข</a></div></td>
             <td><div align="center"><?php echo "<a href=\"frm_deleteteacher.php?t_id=$rs[t_id]\">"; ?>ลบ</a></div></td>
