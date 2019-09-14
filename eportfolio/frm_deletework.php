@@ -31,19 +31,19 @@ $rs = mysql_fetch_array($result);
             <tr>
               <td width="92">ชื่อผลงาน</td>
               <td width="216">
-                <input name="w_name" type="text" id="w_name" value="<?php echo "$rs[w_name]"; ?>">
+                <input name="w_name" type="text" id="w_name" value="<?php echo "$rs[w_name]"; ?>" readonly>
                 <input name="w_id" type="hidden" id="w_id" value="<?php echo "$rs[w_id]"; ?>"></td>
             </tr>
             <tr>
                 <td width="92">ปี</td>
                 <td width="216">
-                 	<input name="w_year" type="text" id="w_year" value="<?php echo "$rs[w_year]"; ?>">
+                 	<input name="w_year" type="text" id="w_year" value="<?php echo "$rs[w_year]"; ?>" readonly>
                 </td>
             </tr>
             <tr>
                 <td width="92">หน่วยงาน</td>
                 <td width="216">
-                    <input name="w_org" type="text" id="w_org" value="<?php echo "$rs[w_org]"; ?>">
+                    <input name="w_org" type="text" id="w_org" value="<?php echo "$rs[w_org]"; ?>" readonly>
                 </td>
                 </tr>
             <tr>

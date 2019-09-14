@@ -24,7 +24,7 @@ mysql_close();
       <td height="128"><table width="800" border="1" align="center">
         <tbody>
           <tr>
-            <td width="266">รายงานข้อมูลผลงาน</td>
+            <td width="266">รายงานข้อมูลอาจารย์</td>
             <td width="518"><div align="right">[ <a href="frm_addteacher.php">เพิ่มอาจารย์</a> ]</div></td>
           </tr>
         </tbody>

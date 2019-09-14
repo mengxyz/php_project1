@@ -1,7 +1,6 @@
 <?php
 include "connect.php";
-$tb_name = "department";
-$sql = "SELECT * FROM $tb_name ORDER BY d_id ASC";
+$sql = "SELECT d.d_id,d.d_name,t.t_name FROM department d LEFT JOIN teacher t ON d.t_id = t.t_id ORDER BY d.d_id ASC";
 $result = mysql_query($sql,$conn)
 	or die("3. ไม่สามารถประมวลผลคำสั่งได้").mysql_error();
 mysql_close();
@@ -22,7 +21,7 @@ mysql_close();
 		include "admin_menu.php" 
 		?>
     <tr>
-      <td height="128"><table width="670" border="1" align="center">
+      <td height="128"><table width="783" border="1" align="center">
         <tbody>
           <tr>
             <td width="240">รายงานข้อมูลกลุ่มสาระ</td>
@@ -30,11 +29,12 @@ mysql_close();
           </tr>
         </tbody>
       </table>
-        <table width="670" border="1" align="center">
+        <table width="783" border="1" align="center">
           <tbody>
 			  
             <tr>
                 <td>รหัสกลุมสาระ </td>
+                <td>หัวหน้ากลุ่มสาระ</td>
                 <td>ชื่อกลุ่มสาระ</td>
                 <td>&nbsp;</td>
                 <td>&nbsp;</td>
@@ -44,12 +44,13 @@ mysql_close();
 			  while($rs = mysql_fetch_array($result)){
 			?>
             <tr>
-              <td width="126"><?php echo "$rs[d_id]"; ?></td>
-              <td width="107"><?php echo "$rs[d_name]"; ?></td>
-              <td width="154">จัดการกลุ่มสาระ</td>
-              <td width="100"><div align="center">
+              <td width="100"><?php echo "$rs[d_id]"; ?></td>
+              <td width="149"><?php echo "$rs[t_name]"; ?></td>
+              <td width="102"><?php echo "$rs[d_name]"; ?></td>
+              <td width="192"><?php echo "<a href=\"frm_adddeptdetail.php?d_id=$rs[d_id]\">"; ?>จัดการกลุ่มสาระ<?php echo "</a>" ?></td>
+              <td width="107"><div align="center">
 			  <?php echo "<a href=\"frm_editdept.php?d_id=$rs[d_id]\">"; ?>แก้ไข<?php echo "</a>" ?></div></td>
-              <td width="149"><div align="center">
+              <td width="93"><div align="center">
              <?php echo "<a href=\"frm_deletedept.php?d_id=$rs[d_id]\">"; ?>ลบ<?php echo "</a>"; ?></div></td>
             </tr>
 			  <?php

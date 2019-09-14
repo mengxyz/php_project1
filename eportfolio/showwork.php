@@ -21,23 +21,24 @@ mysql_close();
 		include "admin_menu.php" 
 		?>
     <tr>
-      <td height="128"><table width="800" border="1" align="center">
+      <td height="128"><p>&nbsp;</p>
+        <table width="800" border="1" align="center">
         <tbody>
           <tr>
-            <td width="266">รายงานข้อมูลผลงาน</td>
-            <td width="518"><div align="right">[ <a href="frm_addwork.php">เพิ่มผลงาน</a> ]</div></td>
+            <td width="293">รายงานข้อมูลผลงาน</td>
+            <td width="491"><div align="right">[ <a href="frm_addwork.php">เพิ่มผลงาน</a> ]</div></td>
           </tr>
         </tbody>
       </table>
         <table width="800" border="1" align="center">
           <tr>
-            <td width="95">รหัสผลงาน</td>
-            <td width="165">ชื่อผลงาน</td>
-            <td width="58">ปี</td>
-            <td width="176">หน่วยงาน</td>
-            <td width="112">&nbsp;</td>
-            <td width="78">&nbsp;</td>
-            <td width="70">&nbsp;</td>
+            <td width="79">รหัสผลงาน</td>
+            <td width="149">ชื่อผลงาน</td>
+            <td width="53">ปี</td>
+            <td width="151">หน่วยงาน</td>
+            <td width="188">&nbsp;</td>
+            <td width="67">&nbsp;</td>
+            <td width="67">&nbsp;</td>
           </tr>
           <?php
 		  	while($rs = mysql_fetch_array($result)){
@@ -54,7 +55,8 @@ mysql_close();
           <?php
 			}
 		  ?>
-      </table></td>
+      </table>
+      <p>&nbsp;</p></td>
     </tr>
 <?php include "foot.php"; ?>
   </tbody>

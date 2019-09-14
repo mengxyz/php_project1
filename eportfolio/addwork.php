@@ -19,8 +19,8 @@ if($w_name && $w_org && $w_year){
 		mysql_close();
 		echo "<script language=\"javascript\">";
 		echo "alert('บันทึกข้อมูลเรียบร้อยแล้ว');";
-		//echo "window.location = 'shwodept.php'";
-		echo "window.history.back();";
+		echo "window.location = 'showwork.php'";
+		//echo "window.history.back();";
 		echo "</script>";
 	}else{
 		echo "<script language=\"javascript\">";

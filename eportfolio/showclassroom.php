@@ -1,6 +1,6 @@
 <?php
 include "connect.php";
-$sql = "SELECT * FROM classroom ORDER BY c_id";
+$sql = "SELECT c.c_name,c.c_id,t.t_name,s.std_name FROM classroom c LEFT JOIN student s ON c.std_id = s.std_id LEFT JOIN teacher t ON c.t_id = t.t_id ORDER BY c.c_id";
 $result = mysql_query($sql,$conn)
 	or die("3. ไม่สามารถประมวลผลคำสั่งได้").mysql_error();
 mysql_close();
@@ -31,13 +31,13 @@ mysql_close();
       </table>
         <table width="800" border="1" align="center">
           <tr>
-            <td width="95">รหัสชั้นเรียน</td>
-            <td width="165">ชื่อชั้นเรียน</td>
-            <td width="58">&nbsp;</td>
-            <td width="176">&nbsp;</td>
-            <td width="112">&nbsp;</td>
-            <td width="78">&nbsp;</td>
-            <td width="70">&nbsp;</td>
+            <td width="93">รหัสชั้นเรียน</td>
+            <td width="154">ชื่อชั้นเรียน</td>
+            <td width="116">ครูประจำชั้น</td>
+            <td width="118">หัวหน้าชั้นเรียน</td>
+            <td width="134">&nbsp;</td>
+            <td width="73">&nbsp;</td>
+            <td width="66">&nbsp;</td>
           </tr>
           <?php
 		  	while($rs = mysql_fetch_array($result)){
@@ -45,9 +45,9 @@ mysql_close();
           <tr>
             <td><?php echo "$rs[c_id]"; ?></td>
             <td><?php echo "$rs[c_name]"; ?></td>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
-            <td>จัดการข้อมูลชั้นเรียน</td>
+            <td><?php echo "$rs[t_name]"; ?></td>
+            <td><?php echo "$rs[std_name]"; ?></td>
+            <td><div align="center"><?php echo "<a href=\"frm_addclassroomdetail.php?c_id=$rs[c_id]\">"; ?>จัดการข้อมูลชั้นเรียน</a></div></td>
             <td><div align="center"><?php echo "<a href=\"frm_editclassroom.php?c_id=$rs[c_id]\">"; ?>แก้ไข</a></div></td>
             <td><div align="center"><?php echo "<a href=\"frm_deleteclassroom.php?c_id=$rs[c_id]\">"; ?>ลบ</a></div></td>
           </tr>
