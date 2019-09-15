@@ -1,4 +1,7 @@
 <?php
+
+session_start();
+if(isset($_SESSION["valid_uname"]) && isset($_SESSION["valid_pwd"])){
 include "connect.php";
 $sql = "SELECT c.c_name,c.c_id,t.t_name,s.std_name FROM classroom c LEFT JOIN student s ON c.std_id = s.std_id LEFT JOIN teacher t ON c.t_id = t.t_id ORDER BY c.c_id";
 $result = mysql_query($sql,$conn)
@@ -18,7 +21,7 @@ mysql_close();
   <tbody>
     <?php 
 		include "head.php";
-		include "admin_menu.php" 
+		include "admin_menu.php"; 
 		?>
     <tr>
       <td height="128"><table width="800" border="1" align="center">
@@ -61,3 +64,9 @@ mysql_close();
 </table>
 </body>
 </html>
+<?php 
+}else{
+    echo "<script> alert('Please Login');window.history.go(-1);</script>";
+        exit();
+}
+?>

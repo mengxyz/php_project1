@@ -1,3 +1,8 @@
+
+<?php
+session_start();
+if(isset($_SESSION["valid_uname"]) && isset($_SESSION["valid_pwd"])){
+?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -9,7 +14,7 @@
 <table width="832" border="1" align="center">
 	<?php 
 		include "head.php";
-		include "admin_menu.php"
+		include "admin_menu.php";
 	?>
   <tr>
     <td><div align="center">
@@ -41,3 +46,9 @@
 <p>&nbsp;</p>
 </body>
 </html>
+<?php 
+}else{
+    echo "<script> alert('Please Login');window.history.go(-1);</script>";
+        exit();
+}
+?>

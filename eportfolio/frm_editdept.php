@@ -1,4 +1,7 @@
 <?php
+
+session_start();
+if(isset($_SESSION["valid_uname"]) && isset($_SESSION["valid_pwd"])){
 	include "connect.php";
 	$d_id = $_GET["d_id"];
 	$sql = "SELECT * FROM department WHERE d_id = '$d_id'";
@@ -49,3 +52,9 @@
 </table>
 </body>
 </html>
+<?php 
+}else{
+    echo "<script> alert('Please Login');window.history.go(-1);</script>";
+        exit();
+}
+?>

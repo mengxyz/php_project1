@@ -1,4 +1,7 @@
 <?php
+
+session_start();
+if(isset($_SESSION["valid_uname"]) && isset($_SESSION["valid_pwd"])){
 include "connect.php";
 $t_id = $_GET['t_id'];
 $sql = "SELECT t.t_pic,t.t_name,t.t_tel,t.t_address,p.po_name,t.t_username,t.t_password,d.d_name FROM department d,position p,teacher t WHERE t.t_id = '$t_id' and t.d_id = d.d_id and t.po_id = p.po_id ";
@@ -20,7 +23,7 @@ mysql_close();
   <tbody>
     <?php 
 		include "head.php";
-		include "admin_menu.php" 
+		include "admin_menu.php"; 
 		?>
     <tr>
       <td height="485"><table width="404" border="1" align="center">
@@ -72,3 +75,10 @@ mysql_close();
 </table>
 </body>
 </html>
+
+<?php 
+}else{
+    echo "<script> alert('Please Login');window.history.go(-1);</script>";
+        exit();
+}
+?>

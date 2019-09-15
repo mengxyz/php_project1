@@ -10,7 +10,7 @@
   <tbody>
     <?php 
 		include "head.php";
-		include "none_menu.php" 
+		include "none_menu.php"; 
 		?>
     <tr>
       <td height="485"><form name="form1" method="post" action="login.php">

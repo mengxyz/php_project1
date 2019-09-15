@@ -1,4 +1,7 @@
 <?php 
+
+session_start();
+if(isset($_SESSION["valid_uname"]) && isset($_SESSION["valid_pwd"])){
 include "connect.php";
 $d_id = $_GET['d_id'];
 $sql = "SELECT * FROM department WHERE d_id = '$d_id'";
@@ -18,7 +21,7 @@ $rs = mysql_fetch_array($result);
 <table width="832" border="1" align="center">
 	<?php 
 		include "head.php";
-		include "admin_menu.php"
+		include "admin_menu.php";
 	?>
   <tr>
     <td><div align="center">
@@ -68,3 +71,9 @@ $rs = mysql_fetch_array($result);
 <p>&nbsp;</p>
 </body>
 </html>
+<?php 
+}else{
+    echo "<script> alert('Please Login');window.history.go(-1);</script>";
+        exit();
+}
+?>

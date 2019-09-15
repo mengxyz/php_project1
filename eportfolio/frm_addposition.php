@@ -1,3 +1,8 @@
+
+<?php
+session_start();
+if(isset($_SESSION["valid_uname"]) && isset($_SESSION["valid_pwd"])){
+?>
 <!doctype html>
 <html>
 <head>
@@ -40,3 +45,9 @@ include "foot.php";
 </table>
 </body>
 </html>
+<?php 
+}else{
+    echo "<script> alert('Please Login');window.history.go(-1);</script>";
+        exit();
+}
+?>

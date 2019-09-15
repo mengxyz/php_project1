@@ -1,4 +1,7 @@
 <?php 
+
+session_start();
+if(isset($_SESSION["valid_uname"]) && isset($_SESSION["valid_pwd"])){
 include "connect.php";
 $po_id = $_GET['po_id'];
 $sql = "SELECT * FROM position WHERE po_id = '$po_id'";
@@ -50,3 +53,9 @@ $rs = mysql_fetch_array($result);
 </table>
 </body>
 </html>
+<?php 
+}else{
+    echo "<script> alert('Please Login');window.history.go(-1);</script>";
+        exit();
+}
+?>

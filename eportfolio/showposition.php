@@ -1,4 +1,7 @@
 <?php
+
+session_start();
+if(isset($_SESSION["valid_uname"]) && isset($_SESSION["valid_pwd"])){
 include "connect.php";
 $sql = "SELECT * FROM position ORDER BY po_id";
 $result = mysql_query($sql,$conn)
@@ -18,7 +21,7 @@ $result = mysql_query($sql,$conn)
   <tbody>
     <?php 
 		include "head.php";
-		include "admin_menu.php" 
+		include "admin_menu.php"; 
 		?>
     <tr>
       <td height="128"><table width="670" border="1" align="center">
@@ -57,3 +60,9 @@ $result = mysql_query($sql,$conn)
 </table>
 </body>
 </html>
+<?php 
+}else{
+    echo "<script> alert('Please Login');window.history.go(-1);</script>";
+        exit();
+}
+?>

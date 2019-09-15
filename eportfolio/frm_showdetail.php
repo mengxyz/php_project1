@@ -20,7 +20,7 @@ mysql_close();
   <tbody>
     <?php 
 		include "head.php";
-		include "none_menu.php" 
+		include "none_menu.php"; 
 		?>
     <tr>
       <td height="485"><div align="center">
