@@ -24,7 +24,8 @@ mysql_close();
 		include "admin_menu.php"; 
 		?>
     <tr>
-      <td height="128"><table width="783" border="1" align="center">
+      <td height="128"><p>&nbsp;</p>
+        <table width="783" border="1" align="center">
         <tbody>
           <tr>
             <td width="240">รายงานข้อมูลกลุ่มสาระ</td>
@@ -60,7 +61,8 @@ mysql_close();
 			  }
 				?>
           </tbody>
-      </table></td>
+      </table>
+      <p>&nbsp;</p></td>
     </tr>
 <?php include "foot.php"; ?>
   </tbody>

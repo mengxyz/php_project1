@@ -24,7 +24,8 @@ $result = mysql_query($sql,$conn)
 		include "admin_menu.php"; 
 		?>
     <tr>
-      <td height="128"><table width="670" border="1" align="center">
+      <td height="128"><p>&nbsp;</p>
+        <table width="670" border="1" align="center">
         <tbody>
           <tr>
             <td width="239">รายงานข้อมูลตำเเหน่ง</td>
@@ -53,7 +54,8 @@ $result = mysql_query($sql,$conn)
           <?php
 			}
 		  ?>
-      </table></td>
+      </table>
+      <p>&nbsp;</p></td>
     </tr>
 <?php include "foot.php"; ?>
   </tbody>
