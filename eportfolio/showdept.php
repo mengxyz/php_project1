@@ -1,7 +1,7 @@
 <?php
 
 session_start();
-if(isset($_SESSION["valid_uname"]) && isset($_SESSION["valid_pwd"])){
+if(isset($_SESSION["valid_uname"]) && isset($_SESSION["valid_pwd"]) && $_SESSION["u_stat"] == '0'){
 include "connect.php";
 $sql = "SELECT d.d_id,d.d_name,t.t_name FROM department d LEFT JOIN teacher t ON d.t_id = t.t_id ORDER BY d.d_id ASC";
 $result = mysql_query($sql,$conn)

@@ -1,7 +1,7 @@
 <?php
 
 session_start();
-if(isset($_SESSION["valid_uname"]) && isset($_SESSION["valid_pwd"])){
+if(isset($_SESSION["valid_uname"]) && isset($_SESSION["valid_pwd"]) && $_SESSION["u_stat"] == '0'){
 include "connect.php";
 $std_id = $_GET['std_id'];
 $sql = "SELECT s.std_address,s.std_tel,s.std_name,c.c_name,p.pa_name,s.std_pic FROM student s,classroom c,parent p WHERE s.c_id = c.c_id AND s.std_id = '$std_id' AND s.pa_id = p.pa_id";

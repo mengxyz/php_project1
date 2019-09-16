@@ -1,7 +1,7 @@
 <?php 
 
 session_start();
-if(isset($_SESSION["valid_uname"]) && isset($_SESSION["valid_pwd"])){
+if(isset($_SESSION["valid_uname"]) && isset($_SESSION["valid_pwd"]) && $_SESSION["u_stat"] == '0'){
 include "connect.php";
 $po_id = $_GET['po_id'];
 $sql = "SELECT * FROM position WHERE po_id = '$po_id'";
