@@ -15,6 +15,7 @@ if(!empty($login) && !empty($password)){
 		session_start();
 		$_SESSION["valid_uname"]=$login;
 		$_SESSION["valid_pwd"]=$password;
+		$_SESSION["u_stat"]=$user_status;
 		mysql_close($conn);
 		echo "<script> alert('Wellcome');window.location = 'frm_editme.php';</script>";
 		exit();
@@ -27,6 +28,7 @@ if(!empty($login) && !empty($password)){
 			session_start();
 			$_SESSION["valid_uname"]=$login;
 			$_SESSION["valid_pwd"]=$password;
+			$_SESSION["u_stat"]=$user_status;
 			mysql_close($conn);
 			echo "<script> alert('Wellcome');window.location = 'showdept.php';</script>";
 			exit();
