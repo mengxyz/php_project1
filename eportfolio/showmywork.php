@@ -52,7 +52,7 @@ if(isset($_SESSION["valid_uname"]) && isset($_SESSION["valid_pwd"])){
           <td><?php echo "$rs2[w_year]"; ?></td>
           <td><?php echo "$rs2[w_org]"; ?></td>
           <td><div align="center">
-          <?php echo "<a href=\"deletemywork.php?w_id=$rs2[w_id]&t_id=$rs[t_id]\">ลบ</option>";
+          <?php echo "<a href=\"frm_deletemywork.php?w_id=$rs2[w_id]&t_id=$rs[t_id]\">ลบ</option>";
 		  ?>
           </div></td>
         </tr>

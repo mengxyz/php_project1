@@ -1,7 +1,7 @@
 <?php
 include "connect.php";
-$w_id = $_GET['w_id'];
-$t_id = $_GET['t_id'];
+$w_id = $_POST['w_id'];
+$t_id = $_POST['t_id'];
 $sql = "DELETE FROM work_detail WHERE w_id = '$w_id' AND t_id = '$t_id'";
 mysql_query($sql,$conn)
 ?>

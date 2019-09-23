@@ -73,11 +73,17 @@ mysql_close();
             <td width="72">ปีที่ได้รับ</td>
             <td width="170">หน่วยงานที่มอบ</td>
             </tr>
-          <tr>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
-            </tr>
+          <?php 
+			$sql = "SELECT w.w_id,w.w_name,w_year,w_org FROM work w,work_detail wd WHERE wd.t_id = $t_id AND wd.w_id = w.w_id";
+			$result2 = mysql_query($sql,$conn);
+			while($rs2 = mysql_fetch_array($result2)){
+		?>
+        <tr>
+          <td><?php echo "$rs2[w_name]"; ?></td>
+          <td><?php echo "$rs2[w_year]"; ?></td>
+          <td><?php echo "$rs2[w_org]"; ?></td>
+        </tr>
+    <?php } ?>
         </table>
         <p>&nbsp;</p>
       </div></td>
