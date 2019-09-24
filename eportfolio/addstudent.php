@@ -8,16 +8,37 @@ $pa_id = $_POST['pa_id'];
 $c_id = $_POST['c_id'];
 
 $fileupload = $_FILES['photo']['tmp_name'];
-$fileupload_name = $_FILES['photo']['name'];
-
-if($fileupload != ""){
-	copy($fileupload,"./picture/".$fileupload_name);
-	$sql = "INSERT INTO student (std_name,std_address,std_tel,pa_id,c_id,std_pic) VALUES ('$std_name','$std_address','$std_tel','$pa_id','$c_id','$fileupload_name')";	
+$fileupload_name = uniqid().$_FILES['photo']['name'];
+if($std_name && $std_address && $std_tel){
+	$sql = "SELECT * FROM student WHERE std_name = '$std_name'";
+	$result = mysql_query($sql,$conn);
+	$total = mysql_fetch_array($result);
+	
+	if($total == 0){
+		if($fileupload != ""){
+			copy($fileupload,"./picture/".$fileupload_name);
+			$sql = "INSERT INTO student (std_name,std_address,std_tel,pa_id,c_id,std_pic) VALUES ('$std_name','$std_address','$std_tel','$pa_id','$c_id','$fileupload_name')";	
+		}else{
+			$sql = "INSERT INTO student (std_name,std_address,std_tel,pa_id,c_id) VALUES ('$std_name','$std_address','$std_tel','$pa_id','$c_id')";	
+		}
+		mysql_query($sql,$conn)
+		or die("3. ไม่สามารถประมวลผลคำสั่งได้").mysql_error();
+	}else{
+		echo "<script language=\"javascript\">";
+		echo "alert('ชื่อ - สกุล ซ้ำ');";
+		echo "window.location = \"frm_addstudent.php\";";
+		echo "</script>";
+	}
 }else{
-	$sql = "INSERT INTO student (std_name,std_address,std_tel,pa_id,c_id) VALUES ('$std_name','$std_address','$std_tel','$pa_id','$c_id')";	
-}
-mysql_query($sql,$conn)
-	or die("3. ไม่สามารถประมวลผลคำสั่งได้").mysql_error();	
+	$msg = "";
+	if(!$std_name) $msg .= " ชื่อ - สกุล";
+	if(!$std_address) $msg .= " ที่อยู่";
+	if(!$std_tel) $msg .= " เบอร์โทร";
+	echo "<script language=\"javascript\">";
+	echo "alert('กรุณาป้อน{$msg}');";
+	echo "window.location = \"frm_addstudent.php\";";
+	echo "</script>";	
+}	
 mysql_close();
 
 ?>

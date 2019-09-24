@@ -1,4 +1,3 @@
-
 <?php
 session_start();
 if(isset($_SESSION["valid_uname"]) && isset($_SESSION["valid_pwd"]) && $_SESSION["u_stat"] == '0'){

@@ -1,5 +1,4 @@
 <?php
-
 session_start();
 if(isset($_SESSION["valid_uname"]) && isset($_SESSION["valid_pwd"]) && $_SESSION["u_stat"] == '0'){
 include "connect.php";
@@ -40,7 +39,7 @@ $rs = mysql_fetch_array($result);
                 <td width="92">หัวหน้าห้อง</td>
                 <td width="216"><select name="std_id" id="std_id">
                 <?php
-					$sql = "SELECT * FROM student";
+					$sql = "SELECT * FROM student where c_id = '$c_id'";
 					$result1 = mysql_query($sql,$conn);
 					while($rs1 = mysql_fetch_array($result1)){
 						echo "<option value=\"$rs1[std_id]\">$rs1[std_name]</option>";	

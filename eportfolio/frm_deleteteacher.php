@@ -1,5 +1,4 @@
 <?php
-
 session_start();
 if(isset($_SESSION["valid_uname"]) && isset($_SESSION["valid_pwd"]) && $_SESSION["u_stat"] == '0'){
 include "connect.php";
@@ -39,19 +38,19 @@ $rs = mysql_fetch_array($result);
             </tr>
             <tr>
                 <td width="92">Password</td>
-                <td width="216"><input name="t_password" type="text" id="t_password" value=<?php echo "$rs[t_password]"; ?> readonly="readonly"></td>
+                <td width="216"><input name="t_password" type="text" id="t_password" value=<?php echo "$rs[t_password]"; ?> readonly></td>
             </tr>
             <tr>
               <td>ชื่อ - สกุล</td>
-              <td><input name="t_name" type="text" id="t_name" value=<?php echo "$rs[t_name]"; ?> readonly="readonly"></td>
+              <td><input name="t_name" type="text" id="t_name" value=<?php echo "$rs[t_name]"; ?> readonly></td>
             </tr>
             <tr>
               <td height="64">ที่อยู่</td>
-              <td><textarea name="t_address" readonly="readonly" id="t_address"><?php echo "$rs[t_address]"; ?></textarea></td>
+              <td><textarea name="t_address" readonly id="t_address"><?php echo "$rs[t_address]"; ?></textarea></td>
             </tr>
             <tr>
               <td>เบอร์โทร</td>
-              <td><input name="t_tel" type="text" id="t_tel" value=<?php echo "$rs[t_tel]"; ?> readonly="readonly"></td>
+              <td><input name="t_tel" type="text" id="t_tel" value=<?php echo "$rs[t_tel]"; ?> readonly></td>
             </tr>
             <tr>
               <td height="118">รูป</td>

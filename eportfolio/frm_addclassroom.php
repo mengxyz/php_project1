@@ -1,4 +1,3 @@
-
 <?php
 session_start();
 if(isset($_SESSION["valid_uname"]) && isset($_SESSION["valid_pwd"]) && $_SESSION["u_stat"] == '0'){
@@ -25,23 +24,15 @@ if(isset($_SESSION["valid_uname"]) && isset($_SESSION["valid_pwd"]) && $_SESSION
             <td colspan="2" bgcolor="#FFB700"><div align="center">เพิ่มชั้นเรียน</div></td>
             </tr>
           <tr>
-            <td>ชื่อชั้นเรียน</td>
-            <td><input type="text" name="c_name" id="c_name" /></td>
-          </tr>
-          <tr>
-            <td>std_id</td>
-            <td>&nbsp;</td>
-          </tr>
-          <tr>
-            <td width="90">t_id</td>
-            <td width="144">&nbsp;</td>
+            <td width="90">ชื่อชั้นเรียน</td>
+            <td width="144"><input type="text" name="c_name" id="c_name" /></td>
           </tr>
           <tr>
             <td height="29" colspan="2"><div align="center">
               <input type="submit" name="button" id="button" value="บันทึก" />
               <input type="reset" name="button2" id="button2" value="ยกเลิก" />
-            </div></td>
-            </tr>
+              </div></td>
+          </tr>
         </table>
       </form>
       <p>&nbsp;</p>

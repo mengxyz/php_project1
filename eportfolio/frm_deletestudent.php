@@ -1,5 +1,4 @@
 <?php
-
 session_start();
 if(isset($_SESSION["valid_uname"]) && isset($_SESSION["valid_pwd"]) && $_SESSION["u_stat"] == '0'){
 include "connect.php";
@@ -41,11 +40,11 @@ $rs = mysql_fetch_array($result);
           </tr>
           <tr>
             <td height="44">ที่อยู่</td>
-            <td><textarea name="std_address" readonly="readonly" id="std_address"><?php echo "$rs[std_address]"; ?></textarea></td>
+            <td><textarea name="std_address" readonly id="std_address"><?php echo "$rs[std_address]"; ?></textarea></td>
           </tr>
           <tr>
             <td>เบอร์โทร</td>
-            <td><input name="std_tel" type="text" id="std_tel" value="<?php echo "$rs[std_tel]"; ?>" readonly="readonly" ></td>
+            <td><input name="std_tel" type="text" id="std_tel" value="<?php echo "$rs[std_tel]"; ?>" readonly ></td>
           </tr>
           <tr>
             <td height="170">รูป</td>

@@ -10,7 +10,7 @@ $po_id = $_POST['po_id'];
 $d_id = $_POST['d_id'];
 
 $fileupload = $_FILES['photo']['tmp_name'];
-$fileupload_name = $_FILES['photo']['name'];
+$fileupload_name = uniqid().$_FILES['photo']['name'];
 
 if($t_name && $t_username){
 	

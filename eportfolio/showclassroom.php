@@ -1,5 +1,4 @@
 <?php
-
 session_start();
 if(isset($_SESSION["valid_uname"]) && isset($_SESSION["valid_pwd"]) && $_SESSION["u_stat"] == '0'){
 include "connect.php";
@@ -24,14 +23,7 @@ mysql_close();
 		include "admin_menu.php"; 
 		?>
     <tr>
-      <td height="128"><table width="800" border="1" align="center">
-        <tbody>
-          <tr>
-            <td width="266">รายงานข้อมูลชั้นเรียน</td>
-            <td width="518"><div align="right">[ <a href="frm_addclassroom.php">เพิ่มชั้นเรียน</a> ]</div></td>
-          </tr>
-        </tbody>
-      </table>
+      <td height="128"><p>&nbsp;</p>
         <table width="800" border="1" align="center">
           <tr>
             <td width="93">รหัสชั้นเรียน</td>
@@ -57,7 +49,8 @@ mysql_close();
           <?php
 			}
 		  ?>
-      </table></td>
+      </table>
+      <p>&nbsp;</p></td>
     </tr>
 <?php include "foot.php"; ?>
   </tbody>

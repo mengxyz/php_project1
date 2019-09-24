@@ -4,7 +4,7 @@ $t_id = $_POST['t_id'];
 $sql = "SELECT * FROM teacher WHERE t_id = '$t_id'";
 $result = mysql_query($sql,$conn);
 $rs = mysql_fetch_array($result);
-if("$rs[t_pic]" != ""){ unlink("./picture/$rs[t_pic]"); }
+if("$rs[t_pic]" != ""){ @unlink("./picture/$rs[t_pic]"); }
 $sql = "DELETE FROM teacher WHERE t_id = '$t_id'";
 mysql_query($sql,$conn)
 	or die("3. ไม่สามารถประมวลผลคำสั่งได้").mysql_error();
