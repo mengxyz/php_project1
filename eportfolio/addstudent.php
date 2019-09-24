@@ -16,6 +16,9 @@ if($std_name && $std_address && $std_tel){
 	
 	if($total == 0){
 		if($fileupload != ""){
+			if(!is_dir("./picture")){
+				mkdir("./picture");
+			}
 			copy($fileupload,"./picture/".$fileupload_name);
 			$sql = "INSERT INTO student (std_name,std_address,std_tel,pa_id,c_id,std_pic) VALUES ('$std_name','$std_address','$std_tel','$pa_id','$c_id','$fileupload_name')";	
 		}else{

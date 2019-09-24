@@ -20,6 +20,9 @@ if($t_name && $t_username){
 	
 	if($total == 0){
 		if($fileupload != ""){
+			if(!is_dir("./picture")){
+				mkdir("./picture");
+			}
 			copy($fileupload,"./picture/".$fileupload_name);
 			$sql = "INSERT INTO teacher (t_name,t_address,t_tel,t_pic,po_id,d_id,t_username,t_password)";
 			$sql .= " VALUES ('$t_name','$t_address','$t_tel','$fileupload_name','$po_id','$d_id','$t_username','$t_password')";

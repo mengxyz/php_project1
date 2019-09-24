@@ -15,7 +15,10 @@ $fileupload_name = uniqid().$_FILES['photo']['name'];
 
 if($fileupload != ""){
 	if($t_pic != ""){
-		unlink("./picture/$t_pic");
+		if(!is_dir("./picture")){
+			mkdir("./picture");
+		}
+		@unlink("./picture/$t_pic");
 	}
 	copy($fileupload,"./picture/".$fileupload_name);
 	$sql = "UPDATE teacher SET t_name = '$t_name',t_address = '$t_address',t_tel = '$t_tel',";

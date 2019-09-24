@@ -13,7 +13,7 @@ $fileupload_name = uniqid().$_FILES['photo']['name'];
 
 if($fileupload != ""){
 	if($std_pic != ""){
-		unlink("./picture/$std_pic");
+		@unlink("./picture/$std_pic");
 	}
 	copy($fileupload,"./picture/".$fileupload_name);
 	$sql = "UPDATE student SET std_name = '$std_name',std_address = '$std_address',std_tel = '$std_tel',pa_id = '$pa_id',c_id = '$c_id',std_pic = '$fileupload_name' WHERE std_id = '$std_id' ";	
