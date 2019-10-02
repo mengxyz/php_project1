@@ -13,7 +13,7 @@ $rs = mysql_fetch_array($result);
 <html>
 <head>
 <meta charset="utf-8">
-<title>Untitled Document</title>
+<title>ลบข้อมูลผลงาน</title>
 </head>
 
 <body>

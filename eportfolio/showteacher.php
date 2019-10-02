@@ -12,7 +12,7 @@ mysql_close();
 <html>
 <head>
 <meta charset="utf-8">
-<title>Untitled Document</title>
+<title>รายงานข้อมูลอาจารย์t</title>
 </head>
 
 <body>
@@ -24,7 +24,7 @@ mysql_close();
 		?>
     <tr>
       <td height="128"><p>&nbsp;</p>
-        <table width="800" border="1" align="center">
+        <table width="800" border="0" align="center">
         <tbody>
           <tr>
             <td width="266">รายงานข้อมูลอาจารย์</td>

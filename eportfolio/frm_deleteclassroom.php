@@ -13,7 +13,7 @@ $rs = mysql_fetch_array($result);
 <html>
 <head>
 <meta charset="utf-8">
-<title>Untitled Document</title>
+<title>ลบข้อมูลชั้นเรียน</title>
 </head>
 
 <body>
@@ -28,7 +28,7 @@ $rs = mysql_fetch_array($result);
         <table width="324" border="1" align="center">
           <tbody>
             <tr>
-              <td colspan="2" bgcolor="#FFAD00"><div align="center">ลบชั้นเรียน</div></td>
+              <td colspan="2" bgcolor="#FFAD00"><div align="center">ลบข้อมูลชั้นเรียน</div></td>
               </tr>
             <tr>
               <td width="92">ชื่อชั้นเรียน</td>
@@ -36,7 +36,7 @@ $rs = mysql_fetch_array($result);
                 <input name="c_name" type="text" id="c_name" value="<?php echo "$rs[c_name]"; ?>" readonly>
                 <input name="c_id" type="hidden" id="c_id" value="<?php echo "$rs[c_id]"; ?>"></td>
             </tr>
-            <tr>
+            <!-- <tr>
                 <td width="92">&nbsp;</td>
                 <td width="216"><select name="select" id="select">
                 </select></td>
@@ -46,7 +46,7 @@ $rs = mysql_fetch_array($result);
                 <td width="216"><select name="select2" id="select2">
                 </select></td>
               </tr>
-            <tr>
+            <tr> -->
               <td colspan="2"><div align="center">
                 <input type="submit" name="submit" id="submit" value="บันทึก">
                 <input type="button" name="Button" onClick=window.history.back() id="reset" value="ยกเลิก">

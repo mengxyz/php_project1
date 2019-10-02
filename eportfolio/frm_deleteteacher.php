@@ -15,7 +15,7 @@ $rs = mysql_fetch_array($result);
 <html>
 <head>
 <meta charset="utf-8">
-<title>Untitled Document</title>
+<title>ลบข้อมูลอาจารย์</title>
 </head>
 
 <body>
@@ -30,7 +30,7 @@ $rs = mysql_fetch_array($result);
         <table width="324" border="1" align="center">
           <tbody>
             <tr>
-              <td colspan="2" bgcolor="#FFAD00"><div align="center">แก้ไขข้อมูลอาจารย์</div></td>
+              <td colspan="2" bgcolor="#FFAD00"><div align="center">ลบข้อมูลอาจารย์</div></td>
               </tr>
             <tr>
               <td width="92">Uername</td>

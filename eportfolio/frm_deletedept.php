@@ -6,7 +6,7 @@ if(isset($_SESSION["valid_uname"]) && isset($_SESSION["valid_pwd"]) && $_SESSION
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>ลบกลุ่มสาระ</title>
+<title>ลบข้อมูลกลุ่มสาระ</title>
 </head>
 
 <body>
@@ -24,9 +24,9 @@ if(isset($_SESSION["valid_uname"]) && isset($_SESSION["valid_pwd"]) && $_SESSION
     <td><div align="center">
       <p>&nbsp;</p>
       <form id="form1" name="form1" method="post" action="deletedept.php">
-        <table width="246" border="1">
+        <table width="300" border="1">
           <tr>
-            <td colspan="2" bgcolor="#FFB700"><div align="center">ลบกลุ่มสาระ</div></td>
+            <td colspan="2" bgcolor="#FFB700"><div align="center">ลบข้อมูลกลุ่มสาระ</div></td>
             </tr>
           <tr>
             <td width="90">ชื่อกลุ่มสาระ</td>

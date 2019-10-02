@@ -13,7 +13,7 @@ $rs = mysql_fetch_array($result);
 <html>
 <head>
 <meta charset="utf-8">
-<title>Untitled Document</title>
+<title>แก้ไขข้อมูลผลงาน</title>
 </head>
 
 <body>
@@ -28,7 +28,7 @@ $rs = mysql_fetch_array($result);
         <table width="324" border="1" align="center">
           <tbody>
             <tr>
-              <td colspan="2" bgcolor="#FFAD00"><div align="center">แก้ไขผลงาน</div></td>
+              <td colspan="2" bgcolor="#FFAD00"><div align="center">แก้ไขข้อมูลผลงาน</div></td>
               </tr>
             <tr>
               <td width="92">ชื่อผลงาน</td>

@@ -36,9 +36,10 @@ $rs = mysql_fetch_array($result);
               <input type="hidden" name="d_id" id="d_id" value="<?php echo "$d_id" ?>" /></td>
           </tr>
           <tr>
-            <td width="90">&nbsp;</td>
-            <td width="144"><div align="center">
-              <select name="t_id" id="t_id">
+            <td width="90">อาจารย์</td>
+            <td width="144"><div>
+            <select required name="t_id" id="t_id">
+            <option value="">-- อาจารย์ --</option>
                 <?php
 			  $sql1 = "SELECT * FROM teacher WHERE d_id = '$d_id'";
 			  $result1 = mysql_query($sql1,$conn);

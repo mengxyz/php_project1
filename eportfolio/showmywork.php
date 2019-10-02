@@ -11,7 +11,7 @@ if(isset($_SESSION["valid_uname"]) && isset($_SESSION["valid_pwd"])){
 <html>
 <head>
 <meta charset="utf-8">
-<title>เพิ่มชั้นเรียน</title>
+<title>ผลงาน</title>
 </head>
 
 <body>

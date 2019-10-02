@@ -6,7 +6,7 @@ if(isset($_SESSION["valid_uname"]) && isset($_SESSION["valid_pwd"]) && $_SESSION
 <html>
 <head>
 <meta charset="utf-8">
-<title>เพิ่มข้อมูลอาจารย์</title>
+<title>เพิ่มข้อมูลนักเรียน</title>
 </head>
 
 <body>
@@ -22,7 +22,7 @@ if(isset($_SESSION["valid_uname"]) && isset($_SESSION["valid_pwd"]) && $_SESSION
       <form action="addstudent.php" method="post" enctype="multipart/form-data" name="form1" id="form1">
         <table width="375" border="1">
           <tr>
-            <td colspan="2" bgcolor="#FFB700"><div align="center">เพิ่มข้อนักเรียน</div></td>
+            <td colspan="2" bgcolor="#FFB700"><div align="center">เพิ่มข้อมูลนักเรียน</div></td>
             </tr>
           <tr>
             <td width="132">ชื่อ - สกุล</td>
@@ -45,7 +45,8 @@ if(isset($_SESSION["valid_uname"]) && isset($_SESSION["valid_pwd"]) && $_SESSION
           <tr>
             <td>ผู้ปกครอง</td>
             <td>
-            <select name="pa_id" id="pa_id">   
+            <select required name="pa_id" id="pa_id">   
+            <option value="">-- ผู้ปกครอง --</option>
             <?php
             	$sql1 = "SELECT * FROM parent";
 				$result1 = mysql_query($sql1,$conn);
@@ -59,7 +60,8 @@ if(isset($_SESSION["valid_uname"]) && isset($_SESSION["valid_pwd"]) && $_SESSION
           <tr>
             <td>ชั้นเรียน</td>
             <td>
-            <select name="c_id" id="c_id">
+            <select required name="c_id" id="c_id">
+            <option value="">-- ชั้นเรียน --</option>
             <?php
             	$sql2 = "SELECT * FROM classroom";
 				$result2 = mysql_query($sql2,$conn);

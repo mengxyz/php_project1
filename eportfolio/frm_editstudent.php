@@ -14,7 +14,7 @@ $rs = mysql_fetch_array($result);
 <html>
 <head>
 <meta charset="utf-8">
-<title>เพิ่มข้อมูลอาจารย์</title>
+<title>แก้ไขข้อมูลนักเรียน</title>
 </head>
 
 <body>
@@ -62,7 +62,7 @@ $rs = mysql_fetch_array($result);
           <tr>
             <td>ผู้ปกครอง</td>
             <td>
-            <select name="pa_id" id="pa_id">   
+            <select require name="pa_id" id="pa_id"> 
             <?php
 			  $sql1 = "SELECT * FROM parent";
 			  $result1 = mysql_query($sql1,$conn);
@@ -79,7 +79,7 @@ $rs = mysql_fetch_array($result);
           <tr>
             <td>ชั้นเรียน</td>
             <td>
-            <select name="c_id" id="c_id">
+            <select require name="c_id" id="c_id">
             <?php
 			  $sql1 = "SELECT * FROM classroom";
 			  $result1 = mysql_query($sql1,$conn);

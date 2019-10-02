@@ -14,7 +14,7 @@ mysql_close();
 <html>
 <head>
 <meta charset="utf-8">
-<title>Untitled Document</title>
+<title>ข้อมูลส่วนตัว</title>
 </head>
 
 <body>
@@ -25,7 +25,8 @@ mysql_close();
 	  include "teacher_menu.php";
 	  ?>
     <tr>
-      <td height="511"><form action="editteacher.php" method="post" enctype="multipart/form-data" name="form1" id="form1">
+      <td height="511">
+      <form action="editme.php" method="post" enctype="multipart/form-data" name="form1" id="form1">
         <table width="324" border="1" align="center">
           <tbody>
             <tr>
@@ -80,7 +81,8 @@ mysql_close();
             </tr>
             <tr>
               <td>กลุ่มสาระ</td>
-              <td><select name="d_id" id="d_id">
+              <td>
+              <select name="d_id" id="d_id">
               <?php
 			  $sql1 = "SELECT * FROM department";
 			  $result1 = mysql_query($sql1,$conn);
@@ -96,7 +98,7 @@ mysql_close();
             <tr>
               <td colspan="2"><div align="center">
                 <input type="submit" name="submit" id="submit" value="บันทึก">
-                <input type="button" name="Button" onClick=window.history.back() id="reset" value="ยกเลิก">
+                <input type="reset" name="Button" id="reset" value="ยกเลิก">
                  <input type="hidden" name="t_id" id="t_id" value="<?php echo "$rs[t_id]"; ?>">
       			<input type="hidden" name="t_pic" id="t_pic" value="<?php echo "$rs[t_pic]" ;?>" >
                 </div></td>

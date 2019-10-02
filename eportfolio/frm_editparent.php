@@ -13,7 +13,7 @@ $rs = mysql_fetch_array($result);
 <html>
 <head>
 <meta charset="utf-8">
-<title>Untitled Document</title>
+<title>แก้ไขข้อมูลผู้ปกครอง</title>
 </head>
 
 <body>
@@ -25,13 +25,14 @@ $rs = mysql_fetch_array($result);
 	  ?>
     <tr>
       <td height="184"><form action="editparent.php" method="post" name="form1" id="form1">
-        <table width="350" border="1" align="center">
+      <br>
+        <table width="400" border="1" align="center">
           <tbody>
             <tr>
-              <td colspan="2" bgcolor="#FFAD00"><div align="center">แก้ไขผู้ปกครอง</div></td>
+              <td colspan="2" bgcolor="#FFAD00"><div align="center">แก้ไขข้อมูลผู้ปกครอง</div></td>
               </tr>
             <tr>
-              <td width="92">รหัสบัตรประชาชน</td>
+              <td width="100">รหัสบัตรประชาชน</td>
               <td width="216">
                 <input name="pa_id" type="text" id="pa_id" value="<?php echo "$rs[pa_id]"; ?>" maxlength="13" readonly></td>
             </tr>
@@ -58,7 +59,8 @@ $rs = mysql_fetch_array($result);
               </tr>
           </tbody>
         </table>
-      </form></td>
+      <br>
+      </td>
     </tr>
     <?php include "foot.php"; ?>
   </tbody>

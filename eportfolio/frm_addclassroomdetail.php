@@ -12,7 +12,7 @@ $rs = mysql_fetch_array($result);
 <html>
 <head>
 <meta charset="utf-8">
-<title>Untitled Document</title>
+<title>จัดการข้อมูลชั้นเรียน</title>
 </head>
 
 <body>
@@ -37,7 +37,9 @@ $rs = mysql_fetch_array($result);
             </tr>
             <tr>
                 <td width="92">หัวหน้าห้อง</td>
-                <td width="216"><select name="std_id" id="std_id">
+                <td width="216">
+                <select required name="std_id" id="std_id">
+                <option value="">-- หัวหน้าห้อง --</option>
                 <?php
 					$sql = "SELECT * FROM student where c_id = '$c_id'";
 					$result1 = mysql_query($sql,$conn);
@@ -49,7 +51,9 @@ $rs = mysql_fetch_array($result);
             </tr>
             <tr>
                 <td width="92">ครูประชั้น</td>
-                <td width="216"><select name="t_id" id="t_id">
+                <td width="216">
+                <select name="t_id" id="t_id">
+                <option value="">-- ครูประชั้น --</option>
                 <?php
 					$sql = "SELECT * FROM teacher";
 					$result2 = mysql_query($sql,$conn);

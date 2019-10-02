@@ -32,7 +32,9 @@ if(isset($_SESSION["valid_uname"]) && isset($_SESSION["valid_pwd"])){
     </tr>
   <tr>
     <td>ผลงาน</td>
-    <td><select name="w_id" id="w_id">
+    <td>
+    <select required name="w_id" id="w_id">
+    <option value="">-- ผลงาน --</option>
     	<?php
         	$sql = "SELECT * FROM work";
 			$result2 = mysql_query($sql,$conn);

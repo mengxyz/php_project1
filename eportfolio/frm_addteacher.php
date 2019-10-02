@@ -53,8 +53,8 @@ if(isset($_SESSION["valid_uname"]) && isset($_SESSION["valid_pwd"]) && $_SESSION
           <tr>
             <td>ตำเเหน่ง</td>
             <td>
-            <select name="po_id" id="po_id">
-            
+            <select required name="po_id" id="po_id">
+            <option value="">-- ตำเเหน่ง --</option>
             <?php
             	$sql1 = "SELECT * FROM position";
 				$result1 = mysql_query($sql1,$conn);
@@ -69,7 +69,8 @@ if(isset($_SESSION["valid_uname"]) && isset($_SESSION["valid_pwd"]) && $_SESSION
           <tr>
             <td>กลุ่มสาระ</td>
             <td>
-            <select name="d_id" id="d_id">
+            <select required name="d_id" id="d_id">
+            <option value="">-- กลุ่มสาระ --</option>
             <?php
             	$sql2 = "SELECT * FROM department";
 				$result2 = mysql_query($sql2,$conn);

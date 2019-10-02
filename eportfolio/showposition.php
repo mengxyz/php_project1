@@ -12,7 +12,7 @@ $result = mysql_query($sql,$conn)
 <html>
 <head>
 <meta charset="utf-8">
-<title>Untitled Document</title>
+<title>รายงานข้อมูลตำเเหน่ง</title>
 </head>
 
 <body>
@@ -24,7 +24,7 @@ $result = mysql_query($sql,$conn)
 		?>
     <tr>
       <td height="128"><p>&nbsp;</p>
-        <table width="670" border="1" align="center">
+        <table width="670" border="0" align="center">
         <tbody>
           <tr>
             <td width="239">รายงานข้อมูลตำเเหน่ง</td>
@@ -34,9 +34,9 @@ $result = mysql_query($sql,$conn)
       </table>
         <table width="670" border="1" align="center">
           <tr>
-            <td width="124">รหัสตำเเหน่ง</td>
-            <td width="109">ชื่อตำเเหน่ง</td>
-            <td width="182">&nbsp;</td>
+            <td width="89">รหัสตำเเหน่ง</td>
+            <td width="176">ชื่อตำเเหน่ง</td>
+            <td width="150">&nbsp;</td>
             <td width="110">&nbsp;</td>
             <td width="111">&nbsp;</td>
           </tr>

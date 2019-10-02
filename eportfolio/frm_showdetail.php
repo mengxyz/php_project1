@@ -12,7 +12,7 @@ mysql_close();
 <html>
 <head>
 <meta charset="utf-8">
-<title>Untitled Document</title>
+<title>รายละเอียด</title>
 </head>
 
 <body>

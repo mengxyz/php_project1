@@ -13,7 +13,7 @@ if(isset($_SESSION["valid_uname"]) && isset($_SESSION["valid_pwd"])){
 <html>
 <head>
 <meta charset="utf-8">
-<title>เพิ่มชั้นเรียน</title>
+<title>ลบผลงาน</title>
 </head>
 
 <body>
@@ -47,8 +47,8 @@ if(isset($_SESSION["valid_uname"]) && isset($_SESSION["valid_pwd"])){
         </tr>
         <tr>
           <td colspan="2"><div align="center">
-            <input type="submit" name="button2" id="button2" value="ยกเลิก">
-            <input type="submit" name="button" id="button" value="ลบ">
+            <input type="submit" name="button2" id="button2" value="ลบ">
+            <input type="button" onclick="window.history.back()" name="button" id="button" value="ยกเลิก">
           </div></td>
           </tr>
       </table>

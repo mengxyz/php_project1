@@ -13,7 +13,7 @@ if(isset($_SESSION["valid_uname"]) && isset($_SESSION["valid_pwd"]) && $_SESSION
 <html>
 <head>
 <meta charset="utf-8">
-<title>Untitled Document</title>
+<title>แก้ไขข้อมูลกลุ่มสาระ</title>
 </head>
 
 <body>
@@ -28,7 +28,7 @@ if(isset($_SESSION["valid_uname"]) && isset($_SESSION["valid_pwd"]) && $_SESSION
         <table width="324" border="1" align="center">
           <tbody>
             <tr>
-              <td colspan="2" bgcolor="#FFAD00"><div align="center">แก้ไขกลุ่มสาระ</div></td>
+              <td colspan="2" bgcolor="#FFAD00"><div align="center">แก้ไขข้อมูลกลุ่มสาระ</div></td>
               </tr>
             <tr>
               <td width="92">ชื่อกลุมสาระ</td>

@@ -13,7 +13,7 @@ $rs = mysql_fetch_array($result);
 <html>
 <head>
 <meta charset="utf-8">
-<title>ลบผู้ปกครอง</title>
+<title>ลบข้อมูลผู้ปกครอง</title>
 </head>
 
 <body>
@@ -25,13 +25,13 @@ $rs = mysql_fetch_array($result);
 	  ?>
     <tr>
       <td height="225"><form action="deleteparent.php" method="post" name="form1" id="form1">
-        <table width="350" border="1" align="center">
+        <table width="400" border="1" align="center">
           <tbody>
             <tr>
               <td colspan="2" bgcolor="#FFAD00"><div align="center">ลบข้อมูลผู้ปกครอง</div></td>
               </tr>
             <tr>
-              <td width="92">รหัสบัตรประชาชน</td>
+              <td width="100">รหัสบัตรประชาชน</td>
               <td width="216">
                 <input name="pa_id" type="text" id="pa_id" value="<?php echo "$rs[pa_id]"; ?>" maxlength="13" readonly>
                 <input name="pa_id_old" type="hidden" id="pa_id_old" value="<?php echo "$rs[pa_id]"; ?>"></td>

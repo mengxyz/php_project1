@@ -14,7 +14,7 @@ $rs = mysql_fetch_array($result);
 <html>
 <head>
 <meta charset="utf-8">
-<title>Untitled Document</title>
+<title>ลบขัอมูลตำเเหน่ง</title>
 </head>
 
 <body>
