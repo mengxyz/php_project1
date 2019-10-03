@@ -1,3 +1,4 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <?php
 include "connect.php";
 $t_pic = $_POST['t_pic'];
@@ -12,6 +13,14 @@ $po_id = $_POST['po_id'];
 
 $fileupload = $_FILES['photo']['tmp_name'];
 $fileupload_name = uniqid().$_FILES['photo']['name'];
+
+$sql = "SELECT * FROM teacher WHERE t_name = '$t_name' AND t_id != '$t_id'";
+$total = mysql_query($sql,$conn);
+
+if(mysql_num_rows($total) > 0){
+	echo "<script language=\"javascript\">alert('อาจารย์ซ้ำ');window.location = 'showteacher.php';</script>";
+	return;
+}
 
 if($fileupload != ""){
 	if($t_pic != ""){

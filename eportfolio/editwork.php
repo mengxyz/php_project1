@@ -7,7 +7,7 @@ $w_org = $_POST['w_org'];
 // check bank text
 if($w_name && $w_org && $w_year){
 	// check diplicate priamry key
-	$sql = "SELECT * FROM work WHERE w_name = '$w_name' AND w_year = '$w_year' AND w_org = '$w_org'";
+	$sql = "SELECT * FROM work WHERE w_name = '$w_name' AND w_year = '$w_year' AND w_org = '$w_org' AND w_id != '$w_id'";
 	$total = mysql_query($sql,$conn);
 	
 	if(mysql_num_rows($total) == 0){

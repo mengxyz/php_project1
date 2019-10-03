@@ -33,7 +33,7 @@ $rs = mysql_fetch_array($result);
               </tr>
             <tr>
               <td width="92">Uername</td>
-              <td width="216"><input value=<?php echo "$rs[t_username]"; ?> type="text" name="t_username" id="t_username"></td>
+              <td width="216"><input readonly value=<?php echo "$rs[t_username]"; ?> type="text" name="t_username" id="t_username"></td>
             </tr>
             <tr>
                 <td width="92">Password</td>

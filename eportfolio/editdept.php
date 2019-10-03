@@ -5,16 +5,16 @@ $d_id = $_POST["d_id"];
 // check bank text
 if($d_name){
 	// check diplicate primary key
-	$sql = "SELECT * FROM department WHERE d_id = '$d_id'";
+	$sql = " SELECT * FROM department WHERE d_name = '$d_name' AND d_id != '$d_id' ";
 	$total = mysql_query($sql,$conn);
 
-	if(mysql_num_rows($total) == 0){
+	if(@mysql_num_rows($total) == 0){
 		$sql = "UPDATE department SET d_name = '$d_name' WHERE d_id = '$d_id'";
 		mysql_query($sql,$conn)
 			or die("3. ไม่สามารถประมวลผลคำสั่งได้").mysql_error();
 	}else{
 		echo "<script language=\"javascript\">";
-		echo "alert('ชื่อชั้นเรียนซ้ำ');";
+		echo "alert('ชื่อกลุ่มสาระซ้ำ');";
 		echo "window.location = \"showdept.php\";";
 		echo "</script>";
 	}

@@ -7,7 +7,7 @@ $pa_tel = $_POST['pa_tel'];
 // check bank text
 if(strlen($pa_id)==13 && $pa_name && $pa_occupation && $pa_tel){
 	// check diplicate priamry key
-	$sql = "SELECT * FROM parent WHERE pa_name = '$pa_name'";
+	$sql = "SELECT * FROM parent WHERE pa_name = '$pa_name' AND pa_id != '$pa_id'";
 	$total = mysql_query($sql,$conn);
 	
 	if(mysql_num_rows($total) == 0){

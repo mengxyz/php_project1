@@ -5,7 +5,7 @@ $c_name = $_POST['c_name'];
 // check bank text
 if($c_name){
 	// check diplicate priamry key
-	$sql = "SELECT * FROM classroom WHERE c_id = '$c_id'";
+	$sql = "SELECT * FROM classroom WHERE c_name = '$c_name' AND c_id != '$c_id'";
 	$total = mysql_query($sql,$conn);
 	
 	if(mysql_num_rows($total) == 0){

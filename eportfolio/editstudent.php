@@ -1,3 +1,4 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <?php
 include "connect.php";
 $std_id = $_POST['std_id'];
@@ -10,6 +11,13 @@ $c_id = $_POST['c_id'];
 
 $fileupload = $_FILES['photo']['tmp_name'];
 $fileupload_name = uniqid().$_FILES['photo']['name'];
+
+$sql = "SELECT * FROM student WHERE std_name = '$std_name' AND std_id != '$std_id'";
+$total = mysql_query($sql,$conn);
+if(mysql_num_rows($total) > 0){
+	echo "<script language=\"javascript\">alert('นักเรียนซ้ำ');window.location = 'showstudent.php';</script>";
+	return;
+}
 
 if($fileupload != ""){
 	if($std_pic != ""){

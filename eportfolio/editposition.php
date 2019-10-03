@@ -5,7 +5,7 @@ $po_name = $_POST['po_name'];
 // check bank text
 if($po_name){
 	// check diplicate priamry key
-	$sql = "SELECT * FROM position WHERE po_id = '$po_id'";
+	$sql = "SELECT * FROM position WHERE po_name = '$po_name' AND po_id != '$po_id'";
 	$total = mysql_query($sql,$conn);
 	
 	if(mysql_num_rows($total) == 0){
