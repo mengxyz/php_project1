@@ -1,74 +1,77 @@
 <?php
 session_start();
-if(isset($_SESSION["valid_uname"]) && isset($_SESSION["valid_pwd"]) && $_SESSION["u_stat"] == '0'){
-include "connect.php";
-$pa_id = $_GET['pa_id'];
-$sql = "SELECT * FROM parent WHERE pa_id = '$pa_id'";
-$result = mysql_query($sql,$conn)
-	or die("ไม่สามารถประมวลผลคำสั่งได้").mysql_error();
-mysql_close(); 
-$rs = mysql_fetch_array($result);
-?>
-<!doctype html>
-<html>
-<head>
-<meta charset="utf-8">
-<title>ลบข้อมูลผู้ปกครอง</title>
-</head>
+if (isset($_SESSION["valid_uname"]) && isset($_SESSION["valid_pwd"]) && $_SESSION["u_stat"] == '0') {
+  include "connect.php";
+  $pa_id = $_GET['pa_id'];
+  $sql = "SELECT * FROM parent WHERE pa_id = '$pa_id'";
+  $result = mysql_query($sql, $conn)
+    or die("ไม่สามารถประมวลผลคำสั่งได้") . mysql_error();
+  mysql_close();
+  $rs = mysql_fetch_array($result);
+  ?>
+  <!doctype html>
+  <meta charset="utf-8">
+  <title>ลบข้อมูลผู้ปกครอง</title>
+  <?php include "cdn.php"; ?>
+  <script>
+    $(document).on('change', '.custom-file-input', function(event) {
+      $(this).next('.custom-file-label').html(event.target.files[0].name);
+    })
+  </script>
+  </head>
 
-<body>
-<table width="851" height="431" border="1" align="center">
-  <tbody>
-   <?php
-	  include "head.php";
-	  include "admin_menu.php";
-	  ?>
-    <tr>
-      <td height="225"><form action="deleteparent.php" method="post" name="form1" id="form1">
-        <table width="400" border="1" align="center">
-          <tbody>
-            <tr>
-              <td colspan="2" bgcolor="#FFAD00"><div align="center">ลบข้อมูลผู้ปกครอง</div></td>
-              </tr>
-            <tr>
-              <td width="100">รหัสบัตรประชาชน</td>
-              <td width="216">
-                <input name="pa_id" type="text" id="pa_id" value="<?php echo "$rs[pa_id]"; ?>" maxlength="13" readonly>
-                <input name="pa_id_old" type="hidden" id="pa_id_old" value="<?php echo "$rs[pa_id]"; ?>"></td>
-            </tr>
-            <tr>
-              <td width="92">ชิ่อ</td>
-              <td width="216">
-                <input name="pa_name" type="text" id="pa_name" value="<?php echo "$rs[pa_name]"; ?>" readonly>
-            </tr>
-            <tr>
-              <td width="92">อาชีพ</td>
-              <td width="216">
-                <input name="pa_occupation" type="text" id="pa_occupation" value="<?php echo "$rs[pa_occupation]"; ?>" readonly>
-            </tr>
-            <tr>
-              <td width="92">เบอร์โทร</td>
-              <td width="216">
-                <input name="pa_tel" type="text" id="pa_tel" value="<?php echo "$rs[pa_tel]"; ?>" readonly>
-            </tr>
-            <tr>
-              <td colspan="2"><div align="center">
-                <input type="submit" name="submit" id="submit" value="ลบ">
-                <input type="button" name="Button" onClick=window.history.back() id="reset" value="ยกเลิก">
-              </div></td>
-              </tr>
-          </tbody>
-        </table>
-      </form></td>
-    </tr>
-    <?php include "foot.php"; ?>
-  </tbody>
-</table>
-</body>
-</html>
-<?php 
-}else{
-    echo "<script> alert('Please Login');window.history.go(-1);</script>";
-        exit();
+  <body>
+    <?php include "admin.nav.php";
+      include "connect.php"; ?>
+    <div class="container h-100 ">
+      <div class="row h-100 justify-content-center align-items-center">
+        <div class="card col-sm-6">
+          <div class="card-body" align="center">
+            <h5 class="card-title text-center">ลบข้อมูลผู้ปกครอง</h5>
+            <br>
+            <form action="deleteparent.php" method="post" name="form1" id="form1">
+
+              <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text" id="inputGroup-sizing-sm">รหัสบัตรประชาชน</span>
+                </div>
+                <input readonly maxlength="13" value="<?php echo "$rs[pa_id]"; ?>" required name="pa_id" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+              </div>
+              <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text" id="inputGroup-sizing-sm">ชื่อ</span>
+                </div>
+                <input readonly required name="pa_name" value="<?php echo "$rs[pa_name]"; ?>" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+              </div>
+              <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text" id="inputGroup-sizing-sm">อาชีพ</span>
+                </div>
+                <input readonly required name="pa_occupation" value="<?php echo "$rs[pa_occupation]"; ?>" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+              </div>
+              <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text" id="inputGroup-sizing-sm">เบอร์โทร</span>
+                </div>
+                <input readonly required name="pa_tel" value="<?php echo "$rs[pa_tel]"; ?>" type="number" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+              </div>
+
+              <div align="center">
+                <button type="submit" class="btn btn-danger">ลบ</button>
+                <button type="button" onClick=window.history.back() class="btn btn-secondary">ยกเลิก</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </body>
+
+  </html>
+<?php
+} else {
+  echo "<script> alert('Please Login');window.history.go(-1);</script>";
+  exit();
 }
 ?>

@@ -49,7 +49,7 @@
 			}
 		}
 	} else {
-		echo "<script> alert('ขออภัย...!..กรุณากรอกข้อมูลให้ครบ');window.history.go(-1);</script>";
+		echo error("ขออภัย...!..กรุณากรอกข้อมูลให้ครบ");
 		exit();
 	}
 	?>

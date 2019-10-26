@@ -71,7 +71,7 @@ $rs = mysql_fetch_array($result);
                             <div class="input-group-prepend">
                                 <span class="input-group-text" id="inputGroup-sizing-sm">เบอร์โทร</span>
                             </div>
-                            <input value="<?php echo "$rs[std_tel]"; ?>" required name="std_tel" type="text"
+                            <input value="<?php echo "$rs[std_tel]"; ?>" required name="std_tel" type="number"
                                 class="form-control" aria-label="Sizing example input"
                                 aria-describedby="inputGroup-sizing-sm">
                         </div>
@@ -134,6 +134,7 @@ $rs = mysql_fetch_array($result);
                 </div>
             </div>
         </div>
+        <?php include "bt4footer.php"; ?>
     </div>
 </body>
 

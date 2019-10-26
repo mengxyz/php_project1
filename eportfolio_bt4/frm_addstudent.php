@@ -46,7 +46,7 @@ if(isset($_SESSION["valid_uname"]) && isset($_SESSION["valid_pwd"]) && $_SESSION
                             <div class="input-group-prepend">
                                 <span class="input-group-text" id="inputGroup-sizing-sm">เบอร์โทร</span>
                             </div>
-                            <input required name="std_tel" type="text" class="form-control"
+                            <input required name="std_tel" type="number" class="form-control"
                                 aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
                         </div>
 
@@ -102,6 +102,7 @@ if(isset($_SESSION["valid_uname"]) && isset($_SESSION["valid_pwd"]) && $_SESSION
                 </div>
             </div>
         </div>
+        <?php include "bt4footer.php"; ?>
     </div>
 </body>
 

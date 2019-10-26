@@ -41,8 +41,8 @@ mysql_close();
                                 <td><?php echo "$rs[std_name]"; ?></td>
                                 <td><?php echo "$rs[c_name]"; ?></td>
                                 <td><?php echo "$rs[pa_name]"; ?></td>
-                                <td> <?php echo "<a href=\"frm_showdetail2.php?std_id=$rs[std_id]\">รายละเอียด</a>"; ?>
-                                </td>
+                                <td class="text-center"><?php echo "<a class=\"btn btn-primary btn-sm\" href=\"frm_showdetail2.php?std_id=$rs[std_id]\"><i class=\"fas fa-info-circle\"></i>  รายละเอียด</a>"; ?></td>
+                            </tr>
                             </tr>
                             <?php } ?>
                         </tbody>

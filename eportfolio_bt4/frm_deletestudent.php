@@ -123,6 +123,7 @@ $rs = mysql_fetch_array($result);
                 </div>
             </div>
         </div>
+        <?php include "bt4footer.php"; ?>
     </div>
 </body>
 

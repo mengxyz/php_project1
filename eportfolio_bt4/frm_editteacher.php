@@ -82,7 +82,7 @@ $rs = mysql_fetch_array($result);
                             <div class="input-group-prepend">
                                 <span class="input-group-text" id="inputGroup-sizing-sm">เบอร์โทร</span>
                             </div>
-                            <input value=<?php echo "$rs[t_tel]"; ?> name="t_tel" type="text" class="form-control"
+                            <input value=<?php echo "$rs[t_tel]"; ?> name="t_tel" type="number" class="form-control"
                                 aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
                         </div>
 
