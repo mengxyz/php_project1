@@ -16,107 +16,114 @@ $rs = mysql_fetch_array($result);
 <head>
     <meta charset="utf-8">
     <title>ลบข้อมูลนักเรียน</title>
+    <?php include "cdn.php"; ?>
+    <script>
+    $(document).on('change', '.custom-file-input', function(event) {
+        $(this).next('.custom-file-label').html(event.target.files[0].name);
+    })
+    </script>
 </head>
 
 <body>
-    <table width="832" border="1" align="center">
-        <?php
-		include "head.php";
-		include "admin_menu.php";
-		include "connect.php";
-		?>
-        <tr>
-            <td>
-                <div align="center">
-                    <p>&nbsp;</p>
-                    <form action="deletestudent.php" method="post" enctype="multipart/form-data" name="form1"
-                        id="form1">
-                        <table width="375" border="1">
-                            <tr>
-                                <td colspan="2" bgcolor="#FFB700">
-                                    <div align="center">ลบข้อมูลนักเรียน</div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td width="132">ชื่อ - สกุล</td>
-                                <td width="227"><input name="std_name" type="text" id="std_name"
-                                        value="<?php echo "$rs[std_name]"; ?>" readonly />
-                                    <input name="std_id" type="hidden" id="std_id" value="<?php echo "$rs[std_id]"; ?>">
-                                    <input name="std_pic" type="hidden" id="std_pic"
-                                        value="<?php echo "$rs[std_pic]"; ?>"></td>
-                            </tr>
-                            <tr>
-                                <td height="44">ที่อยู่</td>
-                                <td><textarea name="std_address" readonly
-                                        id="std_address"><?php echo "$rs[std_address]"; ?></textarea></td>
-                            </tr>
-                            <tr>
-                                <td>เบอร์โทร</td>
-                                <td><input name="std_tel" type="text" id="std_tel" value="<?php echo "$rs[std_tel]"; ?>"
-                                        readonly></td>
-                            </tr>
-                            <tr>
-                                <td height="170">รูป</td>
-                                <td>
-                                    <div align="center">
-                                        <?php
-                	if("$rs[std_pic]" != ""){
-				?>
-                                        <img src="<?php echo "./picture/$rs[std_pic]"; ?>" width="100" height="130">
-                                        <?php 
-					}
-				?>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>ผู้ปกครอง</td>
-                                <td>
-                                    <select disabled name="pa_id" id="pa_id">                                                                   <?php
-                                    $sql1 = "SELECT * FROM parent";
-                                    $result1 = mysql_query($sql1,$conn);
-                                      while($rs1 = mysql_fetch_array($result1)){
-                                      echo "<option value=\"$rs1[pa_id]\"";
-                                      if("$rs[pa_id]" == "$rs1[pa_id]") {echo "selected";}
-                                      echo ">$rs1[pa_name]";
-                                      echo "</option>\n";
-                                    }
-                                    ?>
-                                    </select>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>ชั้นเรียน</td>
-                                <td>
-                                    <select disabled name="c_id" id="c_id">
-                                    <?php
-                                    $sql1 = "SELECT * FROM classroom";
-                                    $result1 = mysql_query($sql1,$conn);
-                                      while($rs1 = mysql_fetch_array($result1)){
-                                      echo "<option value=\"$rs1[c_id]\"";
-                                      if("$rs[c_id]" == "$rs1[c_id]") {echo "selected";}
-                                      echo ">$rs1[c_name]";
-                                      echo "</option>\n";
-                                    }
-                                    ?>
-                                    </select></td>
-                            </tr>
-                            <tr>
-                                <td height="29" colspan="2">
-                                    <div align="center">
-                                        <input type="submit" name="button" id="button" value="ลบ" />
-                                        <input type="reset" name="button2" id="button2" value="ยกเลิก" />
-                                    </div>
-                                </td>
-                            </tr>
-                        </table>
+    <?php include "admin.nav.php"; include "connect.php"; ?>
+    <div class="container h-100 ">
+        <div class="row h-100 justify-content-center align-items-center">
+            <div class="card col-sm-6">
+                <div class="card-body" align="center">
+                    <h5 class="card-title text-center">ลบข้อมูลนักเรียน</h5>
+                    <br>
+                    <form action="deletestudent.php" method="post" enctype="multipart/form-data" name="form1" id="form1">
+
+
+                        <?php
+                            if("$rs[std_pic]" != ""){
+                        ?>
+                        <img src="<?php echo "./picture/$rs[std_pic]"; ?>" width="100" height="100">
+                        <?php 
+                           }
+                        ?>
+
+                        <br>
+                        <br>
+
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="inputGroup-sizing-sm">ชื่อ - สกุล</span>
+                            </div>
+                            <input readonly value="<?php echo "$rs[std_name]"; ?>" required name="std_name" type="text"
+                                class="form-control" aria-label="Sizing example input"
+                                aria-describedby="inputGroup-sizing-sm">
+                        </div>
+
+
+
+
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">ที่อยู่</span>
+                            </div>
+                            <textarea readonly name="std_address" class="form-control"
+                                aria-label="With textarea"><?php echo "$rs[std_address]"; ?></textarea>
+                        </div>
+                        <br>
+
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="inputGroup-sizing-sm">เบอร์โทร</span>
+                            </div>
+                            <input readonly value="<?php echo "$rs[std_tel]"; ?>" required name="std_tel" type="text"
+                                class="form-control" aria-label="Sizing example input"
+                                aria-describedby="inputGroup-sizing-sm">
+                        </div>
+
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="inputGroup-sizing-sm">ผู้ปกครอง</span>
+                            </div>
+                            <select disabled class="custom-select" required name="pa_id" id="t_id">
+                                <option value="">-- ผู้ปกครอง --</option>
+                                <?php
+                                  $sql1 = "SELECT * FROM parent";
+                                  $result1 = mysql_query($sql1,$conn);
+                                    while($rs1 = mysql_fetch_array($result1)){
+                                    echo "<option value=\"$rs1[pa_id]\"";
+                                    if("$rs[pa_id]" == "$rs1[pa_id]") {echo "selected";}
+                                    echo ">$rs1[pa_name]";
+                                    echo "</option>\n";
+                                  }
+                                  ?>
+                            </select>
+                        </div>
+
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="inputGroup-sizing-sm">ชั้นเรียน</span>
+                            </div>
+                            <select disabled class="custom-select" required name="c_id" id="t_id">
+                                <option value="">-- ชั้นเรียน --</option>
+                                <?php
+                                  $sql1 = "SELECT * FROM classroom";
+                                  $result1 = mysql_query($sql1,$conn);
+                                    while($rs1 = mysql_fetch_array($result1)){
+                                    echo "<option value=\"$rs1[c_id]\"";
+                                    if("$rs[c_id]" == "$rs1[c_id]") {echo "selected";}
+                                    echo ">$rs1[c_name]";
+                                    echo "</option>\n";
+                                  }
+                                  ?>
+                            </select>
+                        </div>
+                        <div align="center">
+                            <input name="std_id" type="hidden" id="std_id" value="<?php echo "$rs[std_id]"; ?>">
+                            <input name="std_pic" type="hidden" id="std_pic" value="<?php echo "$rs[std_pic]"; ?>">
+                            <button type="submit" class="btn btn-danger">ลบ</button>
+                            <button type="button" onClick=window.history.back() class="btn btn-secondary">ยกเลิก</button>
+                        </div>
                     </form>
-                    <p>&nbsp;</p>
                 </div>
-            </td>
-        </tr>
-        <?php include "foot.php" ?>
-    </table>
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>

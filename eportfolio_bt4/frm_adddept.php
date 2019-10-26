@@ -29,6 +29,7 @@ if(isset($_SESSION["valid_uname"]) && isset($_SESSION["valid_pwd"]) && $_SESSION
                             <input required name="d_name" type="text" class="form-control"
                                 aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
                         </div>
+                        
                         <div align="center">
                             <button type="submit" class="btn btn-primary">บันทึก</button>
                             <button type="reset" class="btn btn-secondary">ยกเลิก</button>

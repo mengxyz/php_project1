@@ -46,7 +46,7 @@
 
                         <div class="form-check">
                             <input required class="form-check-input" value="1" type="radio" name="user_status" id="exampleRadios1"
-                                value="option1" checked>
+                                value="option1">
                             <label class="form-check-label" for="user_status">
                                 ครูอาจารย์
                             </label>

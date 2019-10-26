@@ -28,7 +28,7 @@ mysql_close();
                             <tr>
                                 <td width="293">รายงานข้อมูลผลงาน</td>
                                 <td width="491">
-                                    <div align="right"><a href="frm_addwork.php"class="btn btn-success btn-sm"><i class="fas fa-plus-square"></i>เพิ่มผลงาน</a></div>
+                                    <div align="right"><a href="frm_addwork.php"class="btn btn-success btn-sm"><i class="fas fa-plus-square"></i> เพิ่มผลงาน</a></div>
                                 </td>
                             </tr>
                         </tbody>

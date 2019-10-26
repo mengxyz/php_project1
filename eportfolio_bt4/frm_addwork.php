@@ -4,53 +4,71 @@ if(isset($_SESSION["valid_uname"]) && isset($_SESSION["valid_pwd"]) && $_SESSION
 ?>
 <!doctype html>
 <html>
+
 <head>
-<meta charset="utf-8">
-<title>เพิ่มผลงาน</title>
+    <meta charset="utf-8">
+    <title>เพิ่มผลงาน</title>
+    <?php include "cdn.php"; ?>
+
 </head>
 
 <body>
-	<table width="832" border="1" align="center">
-<?php
-include "head.php";
-include "admin_menu.php";
-?>
-  <tr>
-    <td><div align="center">
-      <p>&nbsp;</p>
-      <form id="form1" name="form1" method="post" action="addwork.php">
-        <table width="273" border="1">
-          <tr>
-            <td colspan="2" bgcolor="#FFB700"><div align="center">เพิ่มผลงาน</div></td>
-            </tr>
-          <tr>
-            <td>ชื่อผลงาน</td>
-            <td><input type="text" name="w_name" id="w_name" /></td>
-          </tr>
-          <tr>
-            <td>ปี</td>
-            <td>
-              <input name="w_year" type="text" id="w_year"></td>
-          </tr>
-          <tr>
-            <td width="90">หน่วยงาน</td>
-            <td width="144"><input name="w_org" type="text" id="w_org"></td>
-          </tr>
-          <tr>
-            <td height="29" colspan="2"><div align="center">
-              <input type="submit" name="button" id="button" value="บันทึก" />
-              <input type="reset" name="button2" id="button2" value="ยกเลิก" />
-            </div></td>
-            </tr>
-        </table>
-      </form>
-      <p>&nbsp;</p>
-    </div></td>
-  </tr>
-<?php
-include "foot.php";
-?>
-</table>
+    <?php include "admin.nav.php"; ?>
+    <div class="container h-100 ">
+        <div class="row h-100 justify-content-center align-items-center">
+            <div class="card col-sm-4">
+                <div class="card-body" align="center">
+                    <h5 class="card-title text-center">เพิ่มผลงาน</h5>
+                    <br>
+                    <form id="form1" name="form1" method="post" action="addwork.php">
+
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="inputGroup-sizing-sm">ชื่อผลงาน</span>
+                            </div>
+                            <input required name="w_name" type="text" class="form-control"
+                                aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+                        </div>
+
+                        <div style="cursor:pointer" class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="inputGroup-sizing-sm">ปี</span>
+                            </div>
+                            <input style="cursor:pointer" data-date-language="th" required name="w_year" type="text"
+                                class="form-control datepicker" aria-label="Sizing example input"
+                                aria-describedby="inputGroup-sizing-sm">
+                        </div>
+
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="inputGroup-sizing-sm">หน่วยงาน</span>
+                            </div>
+                            <input required name="w_org" type="text" class="form-control"
+                                aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+                        </div>
+
+                        <div align="center">
+                            <button type="submit" class="btn btn-primary">บันทึก</button>
+                            <button type="reset" class="btn btn-secondary">ยกเลิก</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <?php include "bt4footer.php"; ?>
+    </div>
+    <script>
+    /*$(".datepicker").datepicker({
+        format: " yyyy", // Notice the Extra space at the beginning
+        viewMode: "years",
+        minViewMode: "years",
+        autoclose: true,
+    });
+    */
+    </script>
+</body>
+
+</html>
 <?php 
 }else{
     echo "<script> alert('Please Login');window.history.go(-1);</script>";
