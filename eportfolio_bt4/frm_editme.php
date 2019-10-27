@@ -32,7 +32,7 @@ if (isset($_SESSION["valid_uname"]) && isset($_SESSION["valid_pwd"])) {
                 <div class="card-body" align="center">
                     <h5 class="card-title text-center">ข้อมูลส่วนตัว</h5>
                     <br>
-                    <form action="editteacher.php" method="post" enctype="multipart/form-data" name="form1" id="form1">
+                    <form action="editme.php" method="post" enctype="multipart/form-data" name="form1" id="form1">
                         <?php
                             if("$rs[t_pic]" != ""){
                         ?>

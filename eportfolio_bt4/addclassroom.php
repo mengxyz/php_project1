@@ -1,5 +1,15 @@
-<?php
+
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Untitled Document</title>
+<?php include "cdn.php"; ?>
+</head>
+
+<body><?php
 include "connect.php";
+include "alert.php";
 
 $tb_name = "classroom";
 $c_name = $_POST["c_name"];
@@ -15,31 +25,13 @@ if($c_name){
 		mysql_query($sql,$conn)
 			or die("3. ไม่สามารถประมวลผลคำสั่งได้").mysql_error();
 		mysql_close();
-		echo "<script language=\"javascript\">";
-		echo "alert('บันทึกข้อมูลเรียบร้อยแล้ว');";
-		echo "window.location = 'showclassroom.php'";
-		//echo "window.history.back();";
-		echo "</script>";
+		echo success_h3("บันทึกข้อมูลเรียบร้อยแล้ว","showclassroom.php");
 	}else{
-		echo "<script language=\"javascript\">";
-		echo "alert('ชื่อชั้นเรียนซ้ำ');";
-		echo "window.history.back();";
-		echo "</script>";
+		echo error_h3("ชื่อชั้นเรียนซ้ำ");
 	}
 }else{
-	echo "<script language=\"javascript\">";
-	echo "alert('กรุณาป้อนชื่อชั้นเรียน');";
-	echo "window.history.back();";
-	echo "</script>";	
+	echo error_h3("กรุณาป้อนชื่อชั้นเรียน");	
 }
 ?>
-<!doctype html>
-<html>
-<head>
-<meta charset="utf-8">
-<title>Untitled Document</title>
-</head>
-
-<body>
 </body>
 </html>

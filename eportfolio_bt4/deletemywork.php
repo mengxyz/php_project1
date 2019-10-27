@@ -1,14 +1,3 @@
-<?php
-include "connect.php";
-$w_id = $_POST['w_id'];
-$t_id = $_POST['t_id'];
-$sql = "DELETE FROM work_detail WHERE w_id = '$w_id' AND t_id = '$t_id'";
-mysql_query($sql,$conn)
-?>
-<script language="javascript">
-alert("ลบข้อมูลเรียบร้อยแล้ว")
-window.location = "showmywork.php"
-</script>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -17,5 +6,15 @@ window.location = "showmywork.php"
 </head>
 
 <body>
+<?php
+include "connect.php";
+include "cdn.php";
+include "alert.php";
+$w_id = $_POST['w_id'];
+$t_id = $_POST['t_id'];
+$sql = "DELETE FROM work_detail WHERE w_id = '$w_id' AND t_id = '$t_id'";
+mysql_query($sql,$conn);
+echo success_h3("ลบข้อมูลเรียบร้อยแล้ว","showmywork.php");
+?>
 </body>
 </html>

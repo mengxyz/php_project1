@@ -45,7 +45,11 @@ if (isset($_SESSION["valid_uname"]) && isset($_SESSION["valid_pwd"]) && $_SESSIO
                                         $sql = "SELECT * FROM student where c_id = '$c_id'";
                                         $result1 = mysql_query($sql, $conn);
                                         while ($rs1 = mysql_fetch_array($result1)) {
-                                            echo "<option value=\"$rs1[std_id]\">$rs1[std_name]</option>";
+                                            if("$rs1[std_id]" == "$rs[std_id]"){
+                                                echo "<option selected value=\"$rs1[std_id]\">$rs1[std_name]</option>";
+                                            }else{
+                                                echo "<option value=\"$rs1[std_id]\">$rs1[std_name]</option>";
+                                            }
                                         }
                                         ?>
                                 </select>
@@ -61,7 +65,11 @@ if (isset($_SESSION["valid_uname"]) && isset($_SESSION["valid_pwd"]) && $_SESSIO
                                         $sql = "SELECT * FROM teacher";
                                         $result2 = mysql_query($sql, $conn);
                                         while ($rs2 = mysql_fetch_array($result2)) {
-                                            echo "<option value=\"$rs2[t_id]\">$rs2[t_name]</option>";
+                                            if("$rs[t_id]" == "$rs2[t_id]"){
+                                                echo "<option selected value=\"$rs2[t_id]\">$rs2[t_name]</option>";
+                                            }else{
+                                                echo "<option value=\"$rs2[t_id]\">$rs2[t_name]</option>";
+                                            }
                                         }
                                         ?>
                                 </select>

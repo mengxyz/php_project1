@@ -1,5 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+	<?php
+include "cdn.php";?>
+</head>
+<body>
 <?php
 include "connect.php";
+include "alert.php";
 
 $d_name = $_POST["d_name"];
 
@@ -14,30 +26,13 @@ if($d_name){
 		mysql_query($sql,$conn)
 			or die("3. ไม่สามารถประมวลผลคำสั่งได้").mysql_error();
 		mysql_close();
-		echo "<script language=\"javascript\">";
-		echo "alert('บันทึกข้อมูลเรียบร้อยแล้ว');";
-		echo "window.location = 'showdept.php'";
-		echo "</script>";
+		echo success("บันทึกข้อมูลเรียบร้อยแล้ว","showdept.php");
 	}else{
-		echo "<script language=\"javascript\">";
-		echo "alert('ชื่อกลุ่มสาระซ้ำ');";
-		echo "window.history.back();";
-		echo "</script>";
+		echo error_h3("ชื่อกลุ่มสาระซ้ำ");
 	}
 }else{
-	echo "<script language=\"javascript\">";
-	echo "alert('กรุณาป้อนชื่อกลุ่มสาระ');";
-	echo "window.history.back();";
-	echo "</script>";	
+	echo error_h3("กรุณาป้อนชื่อกลุ่มสาระ");
 }
 ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title></title>
-</head>
-<body>
-
 </body>
 </html>

@@ -1,6 +1,15 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+</head>
+
+<body>
 <?php
 include "connect.php";
+include "cdn.php";
+include "alert.php";
 $std_id = $_POST['std_id'];
 $std_pic = $_POST['std_pic'];
 $std_name = $_POST['std_name'];
@@ -15,7 +24,7 @@ $fileupload_name = uniqid().$_FILES['photo']['name'];
 $sql = "SELECT * FROM student WHERE std_name = '$std_name' AND std_id != '$std_id'";
 $total = mysql_query($sql,$conn);
 if(mysql_num_rows($total) > 0){
-	echo "<script language=\"javascript\">alert('นักเรียนซ้ำ');window.location = 'showstudent.php';</script>";
+	echo error_h3("นักเรียนซ้ำ","showstudent.php");
 	return;
 }
 
@@ -32,19 +41,7 @@ if($fileupload != ""){
 mysql_query($sql,$conn)
 	or die("3. ไม่สามารถประมวลผลคำสั่งได้").mysql_error();
 mysql_close();
-
+echo success_h3("แก้ไขข้อมูลเรียบร้อยเเล้ว","showstudent.php");
 ?>
-<script language="javascript">
-alert("บันทึกข้อมูลเรียบร้อยเเล้ว");
-window.location = "showstudent.php";
-</script>>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Untitled Document</title>
-</head>
-
-<body>
 </body>
 </html>

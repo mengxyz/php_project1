@@ -1,5 +1,15 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Untitled Document</title>
+</head>
+
+<body>
 <?php
 include "connect.php";
+include "cdn.php";
+include "alert.php";
 
 $po_name = $_POST["po_name"];
 
@@ -14,33 +24,16 @@ if($po_name){
 		mysql_query($sql,$conn)
 			or die("3. ไม่สามารถประมวลผลคำสั่งได้").mysql_error();
 		mysql_close();
-		echo "<script language=\"javascript\">";
-		echo "alert('บันทึกข้อมูลเรียบร้อยแล้ว');";
-		echo "window.location = 'showposition.php'";
-		//echo "window.history.back();";
-		echo "</script>";
+		echo success_h3("บันทึกข้อมูลเรียบร้อยแล้ว","showposition.php");
+		return;
 	}else{
-		echo "<script language=\"javascript\">";
-		echo "alert('ชื่อตำเเหน่งซ้ำ');";
-		echo "window.history.back();";
-		echo "</script>";
+		echo error_h3("ชื่อตำเเหน่งซ้ำ");
+		return;
 	}
 }else{
-	echo "<script language=\"javascript\">";
-	echo "alert('กรุณาป้อนชื่อตำเเหน่ง');";
-	echo "window.history.back();";
-	echo "</script>";	
+	echo error_h3("กรุณาป้อนชื่อตำเเหน่ง");
+	return;
 }
 ?>
-
-
-<!doctype html>
-<html>
-<head>
-<meta charset="utf-8">
-<title>Untitled Document</title>
-</head>
-
-<body>
 </body>
 </html>
