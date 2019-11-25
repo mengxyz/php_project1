@@ -34,9 +34,9 @@ $rs = mysql_fetch_array($result);
                             <div class="input-group-prepend">
                                 <span class="input-group-text" id="inputGroup-sizing-sm">ชื่อชั้นเรียน</span>
                             </div>
-                            <input value=<?php echo "$rs[c_name]"; ?> name="c_name" type="text" class="form-control"
+                            <input value="<?php echo "$rs[c_name]"; ?>" name="c_name" type="text" class="form-control"
                                 aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
-                                <input type="hidden" name="c_id" value=<?php echo "$rs[c_id]"; ?> />
+                                <input type="hidden" name="c_id" value="<?php echo "$rs[c_id]"; ?>" />
                         </div>
 
                         <div align="center">

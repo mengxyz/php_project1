@@ -51,7 +51,7 @@ if($fileupload != ""){
 mysql_query($sql,$conn)
 	or die("3. ไม่สามารถประมวลผลคำสั่งได้").mysql_error();
 mysql_close();
-echo error_h3("แก้ไขข้อมูลเรียบร้อยเเล้ว","showteacher.php");
+echo success_h3("แก้ไขข้อมูลเรียบร้อยเเล้ว","showteacher.php");
 return;
 ?>
 </body>

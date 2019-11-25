@@ -137,9 +137,11 @@ mysql_close();
             <div class="input-group-prepend">
               <span class="input-group-text" id="inputGroup-sizing-sm">ตำเเหน่ง</span>
             </div>
+            <input readonly value=<?php echo "$rs[d_name]"; ?> name="t_tel" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
           </div>
           <br>
           <br>
+          ผลงาน
           <table class="table table-striped table-bordered">
             <tr>
               <td>ชือผลงาน</td>
@@ -158,6 +160,7 @@ mysql_close();
                 </tr>
               <?php } ?>
           </table>
+
         </div>
       </div>
     </div>

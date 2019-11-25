@@ -154,9 +154,7 @@ if (isset($_SESSION["valid_uname"]) && isset($_SESSION["valid_pwd"]) && $_SESSIO
                 <div class="input-group-prepend">
                   <span class="input-group-text" id="inputGroup-sizing-sm">ตำเเหน่ง</span>
                 </div>
-              </div>
-              
-                <select disabled class="custom-select" required name="po_id" id="t_id">
+                <select disabled class="custom-select" required name="c_id" id="t_id">
                   <option value="">-- ตำเเหน่ง --</option>
                   <?php
                     $sql1 = "SELECT * FROM position";
@@ -174,36 +172,35 @@ if (isset($_SESSION["valid_uname"]) && isset($_SESSION["valid_pwd"]) && $_SESSIO
               </div>
 
 
-              <div class="input-group mb-3">
-                <div class="input-group-prepend">
-                  <span class="input-group-text" id="inputGroup-sizing-sm">ตำเเหน่ง</span>
-                </div>
-                <select disabled class="custom-select" required name="d_id" id="t_id">
-                  <option value="">-- กลุ่มสาระ --</option>
-                  <?php
-                    $sql1 = "SELECT * FROM department";
-                    $result1 = mysql_query($sql1, $conn);
-                    while ($rs1 = mysql_fetch_array($result1)) {
-                      echo "<option value=\"$rs1[d_id]\"";
-                      if ("$rs[d_id]" == "$rs1[d_id]") {
-                        echo "selected";
-                      }
-                      echo ">$rs1[d_name]";
-                      echo "</option>\n";
-                    }
-                    ?>
-                </select>
-                </select>
-              </div>
-
-
-              <br>
-
-            </form>
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="inputGroup-sizing-sm">กลุ่มสาระ</span>
+            </div>
+            <select disabled class="custom-select" required name="d_id" id="t_id">
+              <option value="">-- กลุ่มสาระ --</option>
+              <?php
+                $sql1 = "SELECT * FROM department";
+                $result1 = mysql_query($sql1, $conn);
+                while ($rs1 = mysql_fetch_array($result1)) {
+                  echo "<option value=\"$rs1[d_id]\"";
+                  if ("$rs[d_id]" == "$rs1[d_id]") {
+                    echo "selected";
+                  }
+                  echo ">$rs1[d_name]";
+                  echo "</option>\n";
+                }
+                ?>
+            </select>
           </div>
+
+
+          <br>
+
+          </form>
         </div>
       </div>
-      <?php include "bt4footer.php"; ?>
+    </div>
+    <?php include "bt4footer.php"; ?>
     </div>
   </body>
 

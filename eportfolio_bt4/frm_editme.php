@@ -48,7 +48,7 @@ if (isset($_SESSION["valid_uname"]) && isset($_SESSION["valid_pwd"])) {
                             <div class="input-group-prepend">
                                 <span class="input-group-text" id="inputGroup-sizing-sm">Username</span>
                             </div>
-                            <input readonly value=<?php echo "$rs[t_username]"; ?> name="t_username" type="text"
+                            <input readonly value="<?php echo "$rs[t_username]"; ?> "name="t_username" type="text"
                                 class="form-control" aria-label="Sizing example input"
                                 aria-describedby="inputGroup-sizing-sm">
                         </div>
@@ -57,7 +57,7 @@ if (isset($_SESSION["valid_uname"]) && isset($_SESSION["valid_pwd"])) {
                             <div class="input-group-prepend">
                                 <span class="input-group-text" id="inputGroup-sizing-sm">Password</span>
                             </div>
-                            <input value=<?php echo "$rs[t_password]"; ?> name="t_password" type="text"
+                            <input value="<?php echo "$rs[t_password]"; ?>" name="t_password" type="text"
                                 class="form-control" aria-label="Sizing example input"
                                 aria-describedby="inputGroup-sizing-sm">
                         </div>
@@ -66,7 +66,7 @@ if (isset($_SESSION["valid_uname"]) && isset($_SESSION["valid_pwd"])) {
                             <div class="input-group-prepend">
                                 <span class="input-group-text" id="inputGroup-sizing-sm">ชื่อ - สกุล</span>
                             </div>
-                            <input value=<?php echo "$rs[t_name]"; ?> name="t_name" type="text" class="form-control"
+                            <input value="<?php echo "$rs[t_name]"; ?>" name="t_name" type="text" class="form-control"
                                 aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
                         </div>
 
@@ -82,7 +82,7 @@ if (isset($_SESSION["valid_uname"]) && isset($_SESSION["valid_pwd"])) {
                             <div class="input-group-prepend">
                                 <span class="input-group-text" id="inputGroup-sizing-sm">เบอร์โทร</span>
                             </div>
-                            <input value=<?php echo "$rs[t_tel]"; ?> name="t_tel" type="number" class="form-control"
+                            <input value="<?php echo "$rs[t_tel]"; ?>" name="t_tel" type="number" class="form-control"
                                 aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
                         </div>
 

@@ -96,7 +96,7 @@ if(isset($_SESSION["valid_uname"]) && isset($_SESSION["valid_pwd"]) && $_SESSION
 
                         <div class="input-group mb-3">
                             <div class="input-group-prepend">
-                                <span class="input-group-text" id="inputGroup-sizing-sm">ตำเเหน่ง</span>
+                                <span class="input-group-text" id="inputGroup-sizing-sm">กลุ่มสาระ</span>
                             </div>
                             <select class="custom-select" required name="d_id" id="t_id">
                                 <option value="">-- กลุ่มสาระ --</option>
